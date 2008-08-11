@@ -1,0 +1,127 @@
+﻿body
+{
+	background-color: #d7effa;
+	background-image: url("images/rain/mainbg.jpg");
+}
+
+a
+{
+	color:#539acc;
+}
+
+#header
+{
+	background-color: #354055;
+}
+
+
+#logo
+{
+	background-image: url("images/rain/waterdrop.jpg");
+}
+
+#menu a:hover, #menu a.active 
+{
+	background-image: url("images/rain/link.jpg");
+}
+
+.post
+{
+	background-image: url("images/rain/fadedwaterdrop.jpg");
+	
+}
+
+.post h2
+{
+	background-image: url("images/rain/bluewetglass.gif");
+}
+.post h2 a
+{
+	color:#000077;
+}
+.post h2 a:hover
+{
+	color: #539acc;
+}
+
+#footer p.rain
+{
+	display: inline;
+}
+
+
+/* ------------- {search layout} -------------- */
+#search
+{
+	position: relative;
+	padding: 0;
+	margin: 6px 0px 0 0px;
+}
+
+#search-box
+{
+	padding: 0;
+	margin: 0 0 5px 0;
+	width: 20px;
+	float: none;
+}
+
+#search input
+{
+	margin: 0;
+	padding: 0;
+}
+
+#search-results
+{
+	width: 300px;
+	min-width: 300px;
+	position: absolute;
+	top: 18px;
+	right: 28px;
+	z-index: 10;
+	text-align: left;
+}
+
+#search-results h5
+{
+	font-size: 1em;
+	color: #444;
+	margin: 0;
+	padding: 0;
+	width: 300px;
+}
+
+#search-results ul
+{
+	padding: 0;
+	margin: 0 0 0 8px;
+	width: 100%;
+}
+
+#search-results ul li
+{
+	padding: 0;
+	margin: 0: 
+}
+
+#search-results div.innerbox
+{
+	background-color: #f6f6f6;
+	padding: 10px;
+}
+
+#search a.close
+{
+	position: absolute;
+	top:0;
+	right: 4px;
+	display: block;
+}
+
+#search-progress
+{
+	position: absolute;
+	top: 18px;
+	left: 80px;
+}

@@ -1,0 +1,101 @@
+div.xfnFriendInfoBox
+{
+	text-align: left;
+	z-index: 1000;
+	border: solid 1px black;
+	background-color: #faf4cf;
+	color: #333;
+	width: 200px;
+	font-size: smaller;
+	font-family: Arial, helvetica, Sans-Serif;
+	padding-left: 4px;
+}
+
+div.xfnFriendInfoBox h3
+{
+	margin: 0;
+	padding: 0;
+}
+
+div.xfnFriendInfoBox ul
+{
+	margin: 0;
+}
+
+div.xfnFriendInfoBox ul li
+{
+	margin: 0;
+}
+
+a.xfnRelationship
+{
+	/*
+		padding-right: 13px;
+	background: url(../images/friends.png) no-repeat right;
+	*/
+	white-space: nowrap;
+	padding-right: 26px;
+	background: url(../../images/xfn-small.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="colleague"],
+a.xfnRelationship[rel~="co-worker"]
+{
+	padding-right: 21px;
+	background: url(../images/xfn-colleague.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="colleague"][rel~="met"],
+a.xfnRelationship[rel~="co-worker"][rel~="met"]
+{
+	padding-right: 26px;
+	background: url(../../images/xfn-colleague-met.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="friend"]
+{
+	padding-right: 21px;
+	background: url(../images/xfn-friend.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="friend"][rel~="met"]
+{
+	padding-right: 26px;
+	background: url(../../images/xfn-friend-met.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="sweetheart"]
+{
+	padding-right: 21px;
+	background: url(../images/xfn-sweetheart.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="sweetheart"][rel~="met"]
+{
+	padding-right: 26px;
+	background: url(../../images/xfn-sweetheart-met.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="child"]
+{
+	padding-right: 21px;
+	background: url(../../images/xfn-child.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="parent"]
+{
+	padding-right: 21px;
+	background: url(../../images/xfn-parent.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="spouse"]
+{
+	padding-right: 21px;
+	background: url(../../images/xfn-spouse.png) no-repeat right;
+}
+
+a.xfnRelationship[rel~="me"]
+{
+	padding-right: 21px;
+	background: url(../../images/xfn-me.png) no-repeat right;
+}

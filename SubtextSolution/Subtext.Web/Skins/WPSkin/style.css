@@ -1,0 +1,501 @@
+/*  
+Theme Name: WPSkin
+Theme URI: http://www.analystdeveloper.com/
+Description: This is a hack of the default WordPress theme for Subtext.
+Version: 1.0
+Author: Gurkan Yeniceri
+Author URI: http://www.analystdeveloper.com/
+
+	This theme was designed/hacked and built by Gurkan Yeniceri,
+	whose blog you will find at http://blogs.analystdeveloper.com/gurkaneng/default.aspx
+
+The CSS and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+*/
+
+/*html element of body*/
+body 
+{
+	background-color: #E7E7E7;
+	text-align: center;
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	color: #333;
+	margin: 0 auto 0 auto;
+	padding: 0;
+	background-image : url(images/kubrickbgcolor.jpg); 
+}
+
+#main
+{
+	margin: 0 auto;
+	text-align: left;
+	width: 760px;
+	padding: 0;
+	position: relative;
+}
+
+/*the top of the page*/
+#header 
+{
+	background: url(images/kubrickheader.jpg) no-repeat center;
+	height : 200px;
+	margin-bottom : 0px;
+	padding-bottom : 0px;
+}
+
+/*The title of the blog*/
+#header h1
+{
+	text-align: center;
+	margin: 0 auto;
+	padding: 60px 0 0 0;
+}
+
+h1 a.headermaintitle
+{
+	font-family : 'Lucida Grande', Verdana, Arial, Sans-Serif;
+}
+
+/*the subtitle of the blog*/
+#tagline 
+{
+	font-size : 12px;
+	text-align : center;
+	color : white;
+	margin-bottom : 0px;
+}
+
+/*where the posts and sidebar stays*/
+#mainBody
+{
+	background: url(images/kubrickbg.jpg) no-repeat center;
+	background-repeat : repeat-y;
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+#content
+{
+	float: left;
+	margin: 0 0 0 20px !important;
+	margin-left: 8px;
+	padding-left: 4px;
+	width: 490px;
+}
+
+/*post text and the date on top of title*/
+.post, .date
+{
+	margin-top : 0px;
+	text-align : justified;
+}
+
+/*date on top title*/
+.date{
+	padding-top : 10px;
+	text-align : left;
+	font-size : 12px;
+	font-weight : bold;
+	margin-top : 0px;
+}
+
+.contact
+{
+	margin-top: 0px;
+}
+
+/*trackback pingback and posted time are here*/
+.postfoot
+{
+	text-align : center;
+	margin-bottom : 0;
+}
+
+/*the menu on the right*/
+#sidebar
+{
+	float: left;
+	margin: 10px 0 0 20px !important;
+	margin-left: 15px;
+	width: 200px;
+}
+
+/*This is not the page footer, it is the subtext footer control*/
+#footer 
+{
+	padding-top : 5px;
+	font-size : 10px;
+	text-align : center;
+}
+
+/*I have added this for the end of page picture*/
+.eofp
+{
+	background : url(images/kubrickfooter.jpg) no-repeat center;
+	height : 60px;
+	margin-top : 0;
+	clear: both;
+}
+
+.eofp p
+{
+	margin-left: 150px;
+}
+
+/*comment form and comments left*/
+#commentform, #comments
+{
+	margin-top : 0px;
+	padding-top: 0px;
+}
+
+/*right menu list items*/
+#sidebar ul li
+{
+	color: #777;
+	list-style: none;
+	padding-left: 2px;
+}
+
+/*sidebar lists*/
+#sidebar ul
+{
+	margin: 0;
+	padding: 2px;
+}
+
+/*the bullet of the lists on sidebar*/
+#sidebar ul li:before 
+{
+	content : "\00BB \0020";
+}
+
+#sidebar h3
+{
+	margin-bottom: 0;
+}
+
+/*headers' common settings*/
+h1, h2, h3 
+{
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font-weight: bold;
+}
+
+/*header 1*/
+h1 
+{
+	text-align: center;
+	font-size : 40px;
+	margin-top : 0px;
+	margin-bottom : 5px;
+	padding-top : 70px;
+}
+
+/*various header settings*/
+h1, h1 a, h1 a:hover, h1 a:visited, .description 
+{
+	text-decoration: none;
+	color: white;
+}
+
+/*header 2*/
+h2 {
+	font-size: 1.6em;
+	margin-top : 0px;
+}
+
+div.post h2
+{
+	margin-top: 10px;
+	margin-bottom: 1px;
+}
+
+/*header 3s on sidebar*/
+#sidebar h3 
+{
+	font-family: 'Lucida Grande', Verdana, Sans-Serif;
+	font-size: 1.2em;
+}
+
+/*header 3 general*/	
+h3 {
+	font-size: 1.3em;
+}
+
+/*header 5*/
+h5 
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*header mouse overs*/
+a, h2 a:hover, h3 a:hover 
+{
+	color: #06c;
+	text-decoration: none;
+}
+
+/*hyperlinks, mouse over*/
+a:hover {
+	color: #147;
+	text-decoration: underline;
+}
+
+.debug
+{
+	width: 200px;
+}
+
+.debug p
+{
+	font-size: x-small;
+}
+
+.debug
+{
+	display: none;
+}
+
+div.previousNext
+{
+	padding: 4px;
+}
+
+div.previousNext a
+{
+	font-size: 1.2em;
+}
+
+/* --- { comments } ----------------------- */
+#comments
+{
+	clear: both;	
+}
+
+#commentform h3
+{
+	margin: 0;
+	padding: 10px 0 4px 0;
+	clear: both;
+}
+
+#comments h2, #commentform h2
+{
+	font-size: 1.3em;
+	display: block;
+	border-bottom: solid 1px #999;
+	margin: 1.5em 0 1em 0;
+}
+
+div.comment
+{
+	margin: 0 0 1em 0;
+	clear: both;
+}
+
+div.comment .commentInfo
+{
+	color: #333333;
+	margin-bottom: .2em;
+	padding-left: 26px;
+	height: 22px;
+	display: block;
+	background: url(images/CommentIcon.gif) no-repeat 0 .1em;
+	font-size: .8em;
+}
+
+div.comment h3
+{
+	color: #999;
+	margin: 0;
+	padding-top: 10px;
+	clear: both;
+	font-size:.9em;
+}
+
+div.comment .commentText
+{
+	display: block;
+	padding: 10px 5px 10px 5px;
+	float:left;
+}
+
+div.author .commentText
+{
+	background: #ffffef url(images/CommentAuthorGradient.gif) repeat-x top left;
+	border: solid 1px #967758;
+}
+
+img.avatar
+{
+	width: 50px;
+	border: solid 1px #000;
+}
+
+div.gravatar
+{
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 5px;
+	padding: 0;
+}
+
+div.gravatar img
+{
+}
+
+div.comment div.commentBody
+{
+	float: left;
+	width: 420px;
+}
+
+h1, h2.postTitle
+{
+	color: #333;
+	font-family: Helvetica,Arial,Verdana,sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.45;
+	margin-top: 45px;
+	margin-bottom: 15px;
+	text-align: left;
+	
+}
+
+h2.postTitle a
+{
+	color: #333;
+	text-decoration: none;
+}
+
+h2.postTitle a:hover
+{
+	color:#c00;
+}
+
+span.postTitleDate
+{
+	color: #aaa;
+	font: bold 1em arial, helvetica, sans-serif;
+}
+
+p.postfooter
+{
+	color: #888;
+}
+
+/*---------{commentform}-----------*/
+
+#commentform div.label
+{
+	margin-top: 10px;
+}
+
+#commentform div.label label
+{
+	color: #334;
+}
+
+/* ------------- {search layout} -------------- */
+#search
+{
+	position: relative;
+	width: 300px;
+	text-align: right;
+	padding: 0;
+	margin: 6px 0 0 0px;
+}
+
+* html #search
+{
+	position: absolute;
+	left: 430px;
+	top: 0px;
+}
+
+* html #sidebar
+{
+	padding-top: 40px;
+}
+
+#search-box
+{
+	padding: 0;
+	margin: 0 0 5px 0;
+	width: 100%;
+	float: none;
+}
+
+#search input
+{
+	margin: 0;
+	padding: 0;
+}
+
+#search input.searchterm
+{
+	border: solid 1px #444;
+	width: 135px;
+}
+
+#search-results
+{
+	width: 300px;
+	min-width: 300px;
+	position: absolute;
+	top: 18px;
+	right: 28px;
+	z-index: 10;
+	text-align: left;
+}
+
+#search-results h5
+{
+	font-size: 1em;
+	color: #444;
+	margin: 0;
+	padding: 0;
+	width: 300px;
+}
+
+#search-results ul
+{
+	padding: 0;
+	margin: 0 0 0 8px;
+	width: 100%;
+}
+
+#search-results ul li
+{
+	padding: 0;
+	margin: 0: 
+}
+
+#search-results div.innerbox
+{
+	background-color: #f6f6f6;
+	padding: 10px;
+}
+
+#search a.close
+{
+	position: absolute;
+	top:0;
+	right: 4px;
+	display: block;
+}
+
+#search-progress
+{
+	position: absolute;
+	top: -8px;
+	left: 80px;
+}

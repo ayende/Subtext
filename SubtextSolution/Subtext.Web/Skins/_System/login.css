@@ -1,0 +1,62 @@
+﻿body
+{
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+span.rememberMe
+{
+	display: block;
+}
+
+.rememberMe label
+{
+	display: inline;
+}
+
+#loginPage {
+    margin: 50px auto 0 auto;
+    width: 525px;
+}
+
+#loginPage input.button
+{
+	margin-top: 10px;
+}
+
+input#btnOpenIdLogin_loginButton
+{
+	padding: 3px 10px;
+	font-size: 1.4em;
+}
+
+#btnOpenIdLogin tr td input
+{
+	float: left;
+}
+
+.openidLogin 
+{
+	background-color: #fffadb !important;
+	color: #c0b040;
+	border: solid 1px #cbb930;
+	font-size: 1.8em;
+	width: 350px;
+}
+
+#loginPage input.textbox {
+    width: 350px;
+}
+#loginPage fieldset
+{
+}
+
+.forgotPassword
+{
+	clear: both;
+	margin-top: 8px;
+	display: block;
+	font-size: .8em;
+}

@@ -1,0 +1,40 @@
+﻿html body #sidebar, html body #content {
+    clear: both;
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+html body #sidebar h2 {
+    width: auto;
+}
+
+html body #tabs {
+  color: #000;
+  background-color: #fff;
+  float: left;
+}
+
+html body #tabs li a {
+  color: #000;
+  background-color: #fff;
+}
+
+html body #logo {
+    display: none;
+}
+
+html body #filler {
+  margin: 13px;
+}
+
+html body input.button, html body input.textbox {
+    padding: 0;
+    font-size: 1em;
+}
+
+html body #feedback-filter {
+    float: none;
+    clear: none;
+}

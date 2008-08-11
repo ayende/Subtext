@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://nant.sf.net/schemas/nant.xsd" name="SubText">
+
+	<property name="nant.settings.currentframework" value="net-2.0"/>
+	<property name="nant.onsuccess" value="OnSuccess" />
+	
+	<target name="get-publishing-properties">
+	
+		<if test="${not property::exists('CCNetArtifactDirectory')}"> 
+			<fail message="CCNetArtifactDirectory property not set, so can't create distribution files" />
+		</if>
+
+		<if test="${not property::exists('CCNetWorkingDirectory')}"> 
+			<fail message="CCNetWorkingDirectory property not set, so can't create distribution files" />
+		</if>
+
+		<if test="${not property::exists('CCNetLabel')}"> 
+			<fail message="CCNetLabel property not set, so can't create distribution files" />
+		</if>
+
+		<if test="${not property::exists('msbuild.exe')}">
+			<property name="msbuild.exe" value="C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\MSBuild.exe" />
+		</if>
+
+		<property name="solution.dir" value="${CCNetWorkingDirectory}\SubtextSolution" />
+		<property name="buildtools.dir" value="${CCNetWorkingDirectory}\BuildTools" />
+		<property name="fxcop.dir" value="${buildtools.dir}\FxCop" />
+		<property name="fxcop.exe" value="${fxcop.dir}\FxCopCmd.exe" />
+		<property name="mbunit.exe" value="${buildtools.dir}\MbUnit\MbUnit.Cons.exe" />
+		<property name="ncoverexplorer.exe" value="${buildtools.dir}\NCover\NCoverExplorer.Console.exe" />
+		<property name="ncover.exe" value="${buildtools.dir}\NCover\NCover.Console.exe" />
+		<property name="ndepend.dir" value="${buildtools.dir}\NDepend" />
+		<property name="ndepend.exe" value="${ndepend.dir}\NDepend.Console.exe" />
+		<property name="ndepend.config" value="${ndepend.dir}\NDependProject.xml" />
+		<property name="YUICompressor.dir" value="${buildtools.dir}\YUICompressor" />
+		<property name="YUICompressor.jar" value="yuicompressor.jar" />
+		<property name="subtext.web.bin" value="${solution.dir}\Subtext.Web\bin" />
+		<property name="codemetrics.output.dir" value="${CCNetWorkingDirectory}\NDependTemp" />
+
+		<!-- Directory for hosting images for specific builds -->
+		<property name="artifacts.assets.dir" value="${CCNetArtifactDirectory}\buildlogs\${CCNetLabel}"/>
+		
+		<property name="log.dir" value="${CCNetWorkingDirectory}\logs" />
+
+		<property name="publish.dir.latest" value="${CCNetArtifactDirectory}\builds\latest" />
+		<property name="publish.dir.archive" value="${CCNetArtifactDirectory}\builds\archive" />
+		<property name="publish.dir.latestsource" value="${CCNetArtifactDirectory}\builds\latestsource" />
+		
+		<property name="fileLabel" value="SubText-${CCNetLabel}" />
+		
+
+		
+		<loadtasks path="${buildtools.dir}\NAnt\tasks" failonerror="false" />
+	</target>
+
+	
+	<!-- //TODO: Consider checking in this file after update the version -->
+	<target name="version" depends="get-publishing-properties">
+		<asminfo output="VersionInfo.Designer.cs" language="CSharp">
+			<imports>
+				<import namespace="System" />
+				<import namespace="System.Reflection" />
+			</imports>
+			<attributes>
+				<attribute type="AssemblyVersionAttribute" value="${CCNetLabel}" />
+			</attributes>
+		</asminfo>
+	</target>
+	
+	<target name="clean" depends="get-publishing-properties">
+		<delete dir="${log.dir}" failonerror="false" />
+		<call target="clean-vs" />
+	</target>
+
+	
+	<target name="clean-vs">
+		<foreach item="Folder" property="foldername">
+			<in>
+				<items basedir=".">
+					<include name="*\bin" />
+					<include name="*\obj" />
+				</items>
+			</in>
+			<do>
+				<delete dir="${foldername}" />
+			</do>
+		</foreach>
+		<mkdir dir="Subtext.Web\bin" />
+	</target>
+
+	<!--
+		Compiles Subtext using the "documentation" configuration. 
+		This configuration is the same as DEBUG but it outputs 
+		documentation XML files.
+	-->
+	<target name="compile-debug" depends="clean, version">
+		<property name="configuration" value="debug"/>
+		<call target="compile" />
+	</target>
+
+	
+	<target name="compile-release" depends="clean, version">
+		<property name="configuration" value="Release"/>
+		<call target="compile" />
+	</target>
+
+	
+	<target name="compile">
+		<exec program="${msbuild.exe}">
+			<arg value="SubtextSolution.sln"/>
+			<arg value="/nologo"/>
+			<arg value="/verbosity:normal"/>
+			<arg value="/t:Build"/>
+			<arg value="/p:Configuration=${configuration}"/>
+		</exec>
+	</target>
+
+
+    <target name="prepare-for-testing">
+
+        <xmlpoke
+            file="UnitTests.Subtext\bin\${configuration}\UnitTests.Subtext.dll.config"
+            xpath="/configuration/appSettings/add[@key = 'connectionStringName']/@value"
+            value="subtextData" /> 
+        
+        <nant buildfile="recreateDB.build">
+            <properties>
+                <property name="CCNetWorkingDirectory" value="${CCNetWorkingDirectory}" />
+            </properties>
+        </nant>
+    </target>
+    
+	<!-- 
+		Compiles Subtext and runs the MbUnit tests and NCover reports.
+	-->
+	<target name="testAndCover" depends="get-publishing-properties,compile-debug,prepare-for-testing">
+		<mkdir dir="${log.dir}" />
+		
+		<ncover
+			commandLineExe="${mbunit.exe}"
+			commandLineArgs='/rnf:unittest /rt:xml /rf:"${log.dir}" UnitTests.Subtext.dll'
+			program="${ncover.exe}"
+			workingDirectory="UnitTests.Subtext\bin\${configuration}"
+			coverageFile="${log.dir}\ncover-temp.xml"
+			excludeAttributes="CoverageExcludeAttribute"
+		/>
+
+		<call target="util.ncoverexplorer.nant" />
+	</target>
+
+    <target name="watin" depends="get-publishing-properties,compile-debug,prepare-for-testing" description="Runs the WATIN web tests.">
+        <exec program="${mbunit.exe}" workingdir="WatinTests\bin\${configuration}">
+            <arg value="/rnf:watin-test" />
+            <arg value="/rt:xml" />
+            <arg value='/rf:"${log.dir}"' />
+            <arg value="WatinTests.dll" />
+        </exec>
+    </target>
+
+	<target name="reporting" depends="compile-release">
+		<setenv name="PATH" path="${fxcop.dir}\;%PATH%" verbose="true" />
+
+		<fxcop 
+			projectFile="${buildtools.dir}\FxCop\SubtextCodeAnalysis.FxCop"
+			analysisReportFilename="${log.dir}\ccnet-fxcop.xml"
+			failonerror="false"
+		/>
+	</target>
+
+	<target name="util.ncoverexplorer.nant">
+		<echo message="Starting NCoverExplorer report generation..."/>
+
+		<!-- Other attributes that can be used on ncoverexplorer element:               -->
+		<!--   failMinimum="True" would fail the build if minimum coverage not met.     -->
+		<!-- Remove the xmlReportName and/or htmlReportName attributes to not generate. -->
+		<!-- Report types are 1=Module, 2=Namespace, 3=Namespace/Module.                -->
+		<!-- Valid exclusion 'type' attributes are 'Assembly', 'Namespace' and 'Class'. -->
+		<ncoverexplorer program="${ncoverexplorer.exe}"
+						projectName="SubText"
+						reportType="3"
+						outputDir="${log.dir}" 
+						xmlReportName="ncover.xml"
+						showExcluded="True">
+			<fileset>
+				<include name="${log.dir}\ncover-temp.xml"/>
+			</fileset>
+		</ncoverexplorer>
+	</target>
+
+	<target name="release" depends="dist.archive">
+		<echo message="CI Run for build number ${CCNetLabel} successfully completed" />
+	</target>
+	
+	<target name="dist.publish.latest" depends="compile-release">
+		<delete dir="${publish.dir.latest}" failonerror="false" />
+		<mkdir dir="${publish.dir.latest}" />
+		
+		<echo message="deploying binaries to latest" />
+		
+		<copy todir="${publish.dir.latest}" includeemptydirs="false">
+			<fileset basedir="Subtext.Web">
+				<include name="**/*" />
+				<exclude name="**/*.bmp" />
+				<exclude name="ExternalDependencies/*" />
+				<exclude name="**/*.cs"/>
+				<exclude name="**/*.txt"/>
+				<exclude name="**/*.resx"/>
+				<exclude name="bin/*.xml"/>
+				<exclude name="**/*.csproj"/>
+				<exclude name="**/*.csproj.user"/>
+				<exclude name="**/.cvsignore"/>
+				<exclude name="obj/**"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${publish.dir.latest}" includeemptydirs="false">
+			<fileset basedir="Subtext.Web">
+				<include name="emoticons.txt" />
+			</fileset>
+		</copy>
+		
+		<attrib readonly="false" >
+			<fileset basedir="${publish.dir.latest}">
+				<include name="**/*" />
+			</fileset>
+		</attrib>
+		
+		<call target="javascript.minify" />
+	</target>
+
+	<target name="javascript.minify" depends="get-publishing-properties">
+		<foreach item="File" property="filename">
+			<in>
+				<items basedir="${publish.dir.latest}">
+					<include name="Skins/**/*.js" />
+					<include name="Scripts/**/*.js" />
+					<include name="Skins/**/*.css" />
+					<include name="Scripts/**/*.css" />
+				</items>
+			</in>
+			<do>
+				<echo message="${filename}" />
+				<exec program="java" workingdir="${YUICompressor.dir}">
+					<arg value="-jar" />
+					<arg value="${YUICompressor.jar}" />
+					<arg value="-o" />
+					<arg value="${filename}.min" />
+					<arg value="${filename}" />
+				</exec>
+				<move file="${filename}.min" tofile="${filename}" overwrite="true" />
+			</do>
+		</foreach>
+	</target>
+	
+	<target name="dist.archive" depends="dist.publish.latest">
+		<mkdir dir="${publish.dir.archive}" />
+		<zip zipfile="${publish.dir.archive}\${fileLabel}.zip">
+			<fileset basedir="${publish.dir.latest}">
+				<include name="**/*" />
+				<exclude name="**/*.pdb" />
+			</fileset>
+		</zip>
+	</target>
+	
+	<target name="dist.source" depends="get-publishing-properties">
+		<delete dir="${publish.dir.latestsource}" failonerror="false" />
+		<mkdir dir="${publish.dir.latestsource}" />
+		
+		<zip zipfile="${publish.dir.latestsource}\${fileLabel}.src.zip">
+			<fileset basedir="${solution.dir}">
+				<include name="**/*" />
+				<exclude name="**/bin/**/*" />
+				<exclude name="**/obj/**/*" />
+			</fileset>
+		</zip>
+		
+	</target>
+
+	<target name="OnSuccess">
+		<echo file="${log.dir}\buildinfo.xml" append="false" failonerror="false">
+			<![CDATA[<buildproject>${CCNetProject}</buildproject><buildlabel>${CCNetLabel}</buildlabel>]]>
+		</echo>
+	</target>
+</project>

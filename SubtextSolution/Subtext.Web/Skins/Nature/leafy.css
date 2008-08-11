@@ -1,0 +1,123 @@
+﻿body
+{
+	background-color:#dff3d7;
+	background-image: url("images/leafy/mainbg.jpg");
+}
+
+a
+{
+	color:#9ACC53;
+}
+
+#logo
+{
+	background-image: url("images/leafy/leaves.jpg");
+}
+
+#header
+{
+	background-color: #3f4a3e;
+}
+
+#menu a:hover, #menu a.active 
+{
+	background-color: #3f4a3e;
+	background-image: url("images/leafy/link.jpg");
+}
+
+.post
+{
+	background-image: url("images/leafy/articlenormal.jpg");
+}
+
+.post h1, .post h2, .post h3 
+{
+	background-image: url("images/leafy/headers.jpg");
+}
+
+.post h2 a:hover
+{
+	color: #9acc53;
+}
+
+#footer p.leafy
+{
+	display: inline;
+}
+
+
+/* ------------- {search layout} -------------- */
+#search
+{
+	position: relative;
+	padding: 0;
+	margin: 6px 0px 0 0px;
+}
+
+#search-box
+{
+	padding: 0;
+	margin: 0 0 5px 0;
+	width: 20px;
+	float: none;
+}
+
+#search input
+{
+	margin: 0;
+	padding: 0;
+}
+
+#search-results
+{
+	width: 300px;
+	min-width: 300px;
+	position: absolute;
+	top: 18px;
+	right: 28px;
+	z-index: 10;
+	text-align: left;
+}
+
+#search-results h5
+{
+	font-size: 1em;
+	color: #444;
+	margin: 0;
+	padding: 0;
+	width: 300px;
+}
+
+#search-results ul
+{
+	padding: 0;
+	margin: 0 0 0 8px;
+	width: 100%;
+}
+
+#search-results ul li
+{
+	padding: 0;
+	margin: 0: 
+}
+
+#search-results div.innerbox
+{
+	background-color: #f6f6f6;
+	padding: 10px;
+}
+
+#search a.close
+{
+	position: absolute;
+	top:0;
+	right: 4px;
+	display: block;
+}
+
+#search-progress
+{
+	position: absolute;
+	top: 18px;
+	left: 80px;
+}

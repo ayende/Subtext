@@ -1,0 +1,456 @@
+body
+{
+	background: #fff url(images/bg-stripe.gif) repeat-x;
+	color: #333;
+	font: 100%/1.45 Helvetica, Arial, Verdana, sans-serif;
+	min-width: 600px;
+	margin: 0;
+	padding: 0;
+}
+/*----------{links}--------------------*/
+a {color: #802A2A;}
+a:hover {color: #000;}
+a img {border: none;}
+
+/*----------{structure}----------------*/	
+#main
+{
+	width: 800px;
+	margin: 0 auto;
+}
+
+#header
+{
+	text-align: center;
+	margin:30px 0 30px 0;
+	padding:0;
+}
+
+#header a
+{
+	line-height: 1.2em;
+	font-size: 1.4em;
+	float: left;
+	text-decoration: none;
+}
+
+#content
+{
+	width: 580px;
+	float: left;
+}
+
+* html #content
+{
+	padding-left: 5px;
+	width: 575px;
+}
+
+div.post-content
+{
+	text-align: justify;
+}
+
+/*---------{sidebar}-----------*/
+#sidebar 
+{
+	float: right;
+	width: 200px;
+}
+
+#sidebar div
+{
+	margin-bottom: 1em;
+}
+
+#sidebar ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar h3, #sidebar #nav ul li
+{
+	font-family: Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+	color: #888888;
+	font-size: .8em;
+}
+
+#sidebar h3
+{
+	color: #555;
+	margin: 0;
+	padding: 0;
+}
+
+/*------------{navigation}-----------*/
+#nav
+{
+	padding: 0 0 1em 0;
+	margin-bottom: 1em;
+	font-family: Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+}
+
+#nav ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#nav ul li
+{
+	border-bottom: 1px solid #000000;
+	margin: 0;
+}
+
+#nav ul li a
+{
+	display: block;
+	padding: 5px 5px 5px 0.5em;
+	background-color: #ffffff;
+	color: #888888;
+	text-decoration: none;
+	width: 100%;
+}
+
+html>body #nav ul li a { width: auto; }
+
+#nav ul li a:hover
+{
+	background-color: #fefefe;
+	color: #000;
+}
+
+
+/*---------{commentform}-----------*/
+
+#commentform div.label
+{
+	margin-top: 10px;
+}
+
+#commentform div.label label
+{
+	color: #334;
+}
+
+/* --- { comments } ----------------------- */
+#comments
+{
+	clear: both;	
+}
+
+#commentform h3
+{
+	margin: 0;
+	padding: 10px 0 4px 0;
+	clear: both;
+}
+
+#comments h2, #commentform h2
+{
+	font-size: 1.3em;
+	display: block;
+	border-bottom: solid 1px #999;
+	margin: 1.5em 0 1em 0;
+}
+
+div.comment
+{
+	margin: 0 0 1em 0;
+	clear: both;
+}
+
+div.comment .commentInfo
+{
+	color: #333333;
+	margin-bottom: .2em;
+	padding-left: 26px;
+	height: 22px;
+	display: block;
+	background: url(images/CommentIcon.gif) no-repeat 0 .1em;
+	font-size: .8em;
+}
+
+div.comment h3
+{
+	color: #999;
+	margin: 0;
+	padding-top: 10px;
+	clear: both;
+	font-size:.9em;
+}
+
+div.comment .commentText
+{
+	display: block;
+	padding: 10px 5px 10px 5px;
+	float:left;
+}
+
+div.author .commentText
+{
+	background: #ffffef url(images/CommentAuthorGradient.gif) repeat-x top left;
+	border: solid 1px #967758;
+}
+
+img.avatar
+{
+	width: 50px;
+	border: solid 1px #000;
+}
+
+div.gravatar
+{
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 5px;
+	padding: 0;
+}
+
+div.gravatar img
+{
+}
+
+div.comment div.commentBody
+{
+	float: left;
+	width: 420px;
+}
+
+h1, h2.postTitle
+{
+	color: #333;
+	font-family: Helvetica,Arial,Verdana,sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.45;
+	margin-top: 45px;
+	margin-bottom: 15px;
+	text-align: left;
+	
+}
+
+h2.postTitle a
+{
+	color: #333;
+	text-decoration: none;
+}
+
+h2.postTitle a:hover
+{
+	color:#c00;
+}
+
+span.postTitleDate
+{
+	color: #aaa;
+	font: bold 1em arial, helvetica, sans-serif;
+}
+
+p.postfooter
+{
+	color: #888;
+}
+
+/*-----------{bottom}-----------*/
+#bottom
+{
+	width: 100%;
+	margin-top: 20px;
+	border-top: solid 8px #777;
+	float: left;
+	clear: both;
+	background-color: #292929;
+	font-size: 0.9em;
+}
+
+#bottom h2
+{
+	font-size: 1.4em;
+	margin-bottom: 10px;
+	padding: 0 8px;
+}
+
+#bottom ul, #bottom ol, #bottom p
+{
+	line-height: 150%;
+}
+
+#bottom ul
+{
+	border-top: 1px solid #555;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#bottom ul li
+{
+	border-bottom: 1px solid #555;
+	line-height: 26px;
+}
+
+#bottom ul li a
+{
+	display: block;
+	color: #fff;
+	padding: 0 10px;
+	text-decoration: none;
+	border: none;
+}
+
+#bottom ul li a:hover
+{
+	background-color: #000;
+	color: #999;
+}
+
+#bottom-info
+{
+	color: #fff;
+}
+
+#bottom-info div
+{
+	float: left;
+	width: 30%;
+	padding: 20px 0 20px 20px;
+}
+
+#footer
+{
+	background-color: #191919;
+	color: #fff;
+	font-size : 70%;
+	clear: both;
+	padding: 12px 0 12px 0;
+	text-align: center;
+	width: 100%;
+	border-top: solid 1px #000;
+}
+
+#footer a
+{
+	color: #fff;
+}
+
+#footer a:hover
+{
+	color: #777;
+}
+
+/*-----------{misc}------------*/
+blockquote
+{
+	font-family: "arial", courier, monospace;
+	text-align: justify; 
+	padding:5px;
+	border-left: 1px solid #CD9A32;
+}
+
+/* ------------- {search layout} -------------- */
+#search
+{
+	position: relative;
+	width: 300px;
+	text-align: right;
+	padding: 0;
+	margin: 6px 0px 0 0px;
+}
+
+#search-box
+{
+	padding: 0;
+	margin: 0 0 5px 0;
+	width: 100%;
+	float: none;
+}
+
+#search input
+{
+	margin: 0;
+	padding: 0;
+}
+
+#search input.searchterm
+{
+	width: 125px;
+}
+
+#search-results
+{
+	width: 300px;
+	min-width: 300px;
+	position: absolute;
+	top: 18px;
+	right: 28px;
+	z-index: 10;
+	text-align: left;
+}
+
+#search-results h5
+{
+	font-size: 1em;
+	color: #444;
+	margin: 0;
+	padding: 0;
+	width: 300px;
+}
+
+#search-results ul
+{
+	padding: 0;
+	margin: 0 0 0 8px;
+	width: 100%;
+}
+
+#search-results ul li
+{
+	padding: 0;
+	margin: 0: 
+}
+
+#search-results div.innerbox
+{
+	background-color: #f6f6f6;
+	padding: 10px;
+}
+
+#search a.close
+{
+	position: absolute;
+	top:0;
+	right: 4px;
+	display: block;
+}
+
+#search-progress
+{
+	position: absolute;
+	top: -8px;
+	left: 80px;
+}
+
+/* ie6 patches */
+* html #sidebar
+{
+	width: 180px;
+	margin-top: 20px;
+}
+
+* html #search
+{
+	position: absolute;
+	right: 105px;
+	top: 50px;
+}
+
+* html #search #search-results
+{
+	right: -5px;
+}

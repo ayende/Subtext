@@ -1,0 +1,118 @@
+body 
+{ 
+	padding: 32px; 
+	font-size: 13px; 
+	background: #eee; 
+	margin: 0 auto 0 auto; 
+	width: 80%; 
+	color: #000; 
+	font-family: verdana, arial, sans-serif 
+}
+
+#main
+{
+	width: 600px;
+	border: #bbb 1px solid; 
+	padding: 32px; 
+	background: #fff; 
+}
+
+#logo
+{
+	width: 261px;
+	height: 85px;
+}
+
+h1
+{ 
+	padding: 0 0 36px 0;
+	font-weight: bold; 
+	font-size: 150%; 
+	margin: 0px; 
+	color: #000999; 
+	font-family: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+}
+			
+h2 
+{ 
+	padding: 0px; 
+	font-weight: bold; 
+	font-size: 105%; 
+	margin: 0 0 8px 0; 
+	text-transform: uppercase; 
+	color: #999; 
+	border-bottom: #ddd 1px solid; 
+	font-family: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+}
+
+p 
+{ 
+	padding: 6px 0 6px 0; 
+	margin: 0px; 
+}
+
+a:link 
+{ 
+	color: #002c99; 
+	text-decoration: none 
+}
+
+a:visited 
+{ 
+	color: #002c99; 
+	text-decoration: none 
+}
+
+a:hover 
+{ 
+	color: #cc0066; 
+	background-color: #f5f5f5; 
+	text-decoration: underline 
+}
+
+.footnote
+{
+	font-size: .8em;
+}
+
+#installationQuestionTable
+{
+	border-top: solid 1px #BBBBBB;
+	border-right: solid 1px #BBBBBB;
+}
+
+#installationQuestionTable TD, #installationQuestionTable TH
+{
+	border-left: solid 1px #BBBBBB;
+	border-bottom: solid 1px #BBBBBB;
+}
+
+.error
+{
+	color: Red;
+}
+
+#headerLogoImg
+{
+	float: right;
+}
+
+.pullout
+{
+	display: block;
+	width: 30%;
+	padding: 10px;
+	background-color: #ddd;
+	float: right;
+	font: bold 1em arial, helvetica, sans-serif;
+	text-align: left;
+	letter-spacing: 0.05em;
+	margin: 5px;
+	clear: both;
+	border: solid 1px;
+}
+
+.pullout.alt
+{
+	float: left;
+}

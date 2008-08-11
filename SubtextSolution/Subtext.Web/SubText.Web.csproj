@@ -1,0 +1,2447 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C11B428-9C4A-46C3-B7F0-48215276BFA5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Subtext.Web</RootNamespace>
+    <AssemblyName>Subtext.Web</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOCUMENTATION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10201.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BlogML, Version=1.0.2229.38505, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Subtext.Framework\ExternalDependencies\BlogML.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenId, Version=2.2.0.8121, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\DotNetOpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="freetextbox, Version=3.1.4.36150, Culture=neutral, PublicKeyToken=5962a4e684a48b87" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Identicon, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\Jayrock.dll</HintPath>
+    </Reference>
+    <Reference Include="Jayrock.Json, Version=0.9.8316.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\Jayrock.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=227c66cf5503649a, processorArchitecture=MSIL" />
+    <Reference Include="PostBackRitalin, Version=0.9.2952.29277, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\PostBackRitalin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalDependencies\System.Web.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\VersionInfo.Designer.cs">
+      <Link>Properties\VersionInfo.Designer.cs</Link>
+    </Compile>
+    <Compile Include="Admin\Articles\Articles.Master.cs">
+      <DependentUpon>Articles.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Articles\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Articles\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Articles\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Articles\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Articles\Articles.Master.designer.cs" />
+    <Compile Include="Admin\Comments.aspx.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Comments.aspx.designer.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Configure.aspx.cs">
+      <DependentUpon>Configure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Configure.aspx.designer.cs">
+      <DependentUpon>Configure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Customize.aspx.cs">
+      <DependentUpon>Customize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Customize.aspx.designer.cs">
+      <DependentUpon>Customize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditArticles.aspx.cs">
+      <DependentUpon>EditArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditArticles.aspx.designer.cs">
+      <DependentUpon>EditArticles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCategories.aspx.cs">
+      <DependentUpon>EditCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCategories.aspx.designer.cs">
+      <DependentUpon>EditCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditGalleries.aspx.cs">
+      <DependentUpon>EditGalleries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditGalleries.aspx.designer.cs">
+      <DependentUpon>EditGalleries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditImage.aspx.cs">
+      <DependentUpon>EditImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditImage.aspx.designer.cs">
+      <DependentUpon>EditImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditKeyWords.aspx.cs">
+      <DependentUpon>EditKeyWords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditKeyWords.aspx.designer.cs">
+      <DependentUpon>EditKeyWords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditLinks.aspx.cs">
+      <DependentUpon>EditLinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditLinks.aspx.designer.cs">
+      <DependentUpon>EditLinks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ErrorLog.aspx.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ErrorLog.aspx.designer.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Export.aspx.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Feedback\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Feedback\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Feedback\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Feedback\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Feedback\Feedback.Master.cs">
+      <DependentUpon>Feedback.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Feedback\Feedback.Master.designer.cs">
+      <DependentUpon>Feedback.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Feedback\FeedbackState.cs" />
+    <Compile Include="Admin\ImportExport.aspx.cs">
+      <DependentUpon>ImportExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportExport.aspx.designer.cs">
+      <DependentUpon>ImportExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Options.aspx.cs">
+      <DependentUpon>Options.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Options.aspx.designer.cs">
+      <DependentUpon>Options.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Posts\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Posts\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Posts\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Posts\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Posts\Posts.Master.cs">
+      <DependentUpon>Posts.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Posts\Posts.Master.designer.cs">
+      <DependentUpon>Posts.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Preferences.aspx.cs">
+      <DependentUpon>Preferences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Preferences.aspx.designer.cs">
+      <DependentUpon>Preferences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Referrers.aspx.cs">
+      <DependentUpon>Referrers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Referrers.aspx.designer.cs">
+      <DependentUpon>Referrers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RssFeeds.aspx.cs">
+      <DependentUpon>RssFeeds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RssFeeds.aspx.designer.cs">
+      <DependentUpon>RssFeeds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Statistics.aspx.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Statistics.aspx.designer.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StatsView.aspx.cs">
+      <DependentUpon>StatsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StatsView.aspx.designer.cs">
+      <DependentUpon>StatsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Syndication.aspx.cs">
+      <DependentUpon>Syndication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Syndication.aspx.designer.cs">
+      <DependentUpon>Syndication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\CategoryLinkList.ascx.cs">
+      <DependentUpon>CategoryLinkList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\CategoryLinkList.ascx.designer.cs">
+      <DependentUpon>CategoryLinkList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\EntriesList.ascx.cs">
+      <DependentUpon>EntriesList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\EntriesList.ascx.designer.cs">
+      <DependentUpon>EntriesList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\EntryEditor.ascx.cs">
+      <DependentUpon>EntryEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\EntryEditor.ascx.designer.cs">
+      <DependentUpon>EntryEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebUI\AdminPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebUI\AdminPageTemplate.Master.cs">
+      <DependentUpon>AdminPageTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebUI\AdminPageTemplate.Master.designer.cs">
+      <DependentUpon>AdminPageTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebUI\AdminUrlHelper.cs" />
+    <Compile Include="Admin\WebUI\Components\Collections\IOpmlItemCollection.cs" />
+    <Compile Include="Admin\WebUI\Components\Collections\IPageLocationCollection.cs" />
+    <Compile Include="Admin\WebUI\Components\Collections\OpmlItemCollection.cs" />
+    <Compile Include="Admin\WebUI\Components\Collections\PageLocationCollection.cs" />
+    <Compile Include="Admin\WebUI\Components\ConfirmCommands.cs" />
+    <Compile Include="Admin\WebUI\Components\OpmlProvider.cs" />
+    <Compile Include="Admin\WebUI\Components\PageLocation.cs" />
+    <Compile Include="Admin\WebUI\Components\Preferences.cs" />
+    <Compile Include="Admin\WebUI\Components\SiteMap.cs" />
+    <Compile Include="Admin\WebUI\ConfirmationPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebUI\Controls\AdvancedPanel.cs" />
+    <Compile Include="Admin\WebUI\Controls\BreadCrumbs.cs" />
+    <Compile Include="Admin\WebUI\Controls\ContentRegion.cs" />
+    <Compile Include="Admin\WebUI\Controls\HeaderBase.cs" />
+    <Compile Include="Admin\WebUI\Controls\HeaderLink.cs" />
+    <Compile Include="Admin\WebUI\Controls\LinkList.cs" />
+    <Compile Include="Admin\WebUI\Controls\MessagePanel.cs" />
+    <Compile Include="Admin\Credits.aspx.cs">
+      <DependentUpon>Credits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Credits.aspx.designer.cs">
+      <DependentUpon>Credits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebUI\StatsPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebUI\Utilities.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\ErrorLog.aspx.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\ErrorLog.aspx.designer.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\HostAdminPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\HostAdminTemplate.Master.cs">
+      <DependentUpon>HostAdminTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\HostAdminTemplate.Master.designer.cs">
+      <DependentUpon>HostAdminTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Import\ImportComplete.aspx.cs">
+      <DependentUpon>ImportComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Import\ImportComplete.aspx.designer.cs">
+      <DependentUpon>ImportComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Import\ImportStart.aspx.cs">
+      <DependentUpon>ImportStart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Import\ImportStart.aspx.designer.cs">
+      <DependentUpon>ImportStart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Import\Step01_SelectImportProvider.aspx.cs">
+      <DependentUpon>Step01_SelectImportProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Import\Step01_SelectImportProvider.aspx.designer.cs">
+      <DependentUpon>Step01_SelectImportProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Import\Step02_GatherInfo.aspx.cs">
+      <DependentUpon>Step02_GatherInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Import\Step02_GatherInfo.aspx.designer.cs">
+      <DependentUpon>Step02_GatherInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Queue.aspx.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Queue.aspx.designer.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Upgrade\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Upgrade\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\Upgrade\UpgradeComplete.aspx.cs">
+      <DependentUpon>UpgradeComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\Upgrade\UpgradeComplete.aspx.designer.cs">
+      <DependentUpon>UpgradeComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\UserControls\BlogsEditor.ascx.cs">
+      <DependentUpon>BlogsEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\UserControls\BlogsEditor.ascx.designer.cs">
+      <DependentUpon>BlogsEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HostAdmin\UserControls\GroupsEditor.ascx.cs">
+      <DependentUpon>GroupsEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostAdmin\UserControls\GroupsEditor.ascx.designer.cs">
+      <DependentUpon>GroupsEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Install\BlogNotConfiguredError.aspx.cs">
+      <DependentUpon>BlogNotConfiguredError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\BlogNotConfiguredError.aspx.designer.cs">
+      <DependentUpon>BlogNotConfiguredError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Install\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Install\InstallationBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\InstallationComplete.aspx.cs">
+      <DependentUpon>InstallationComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\InstallationComplete.aspx.designer.cs">
+      <DependentUpon>InstallationComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Install\InstallTemplate.Master.cs">
+      <DependentUpon>InstallTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\InstallTemplate.Master.designer.cs">
+      <DependentUpon>InstallTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Install\Step02_ConfigureHost.aspx.cs">
+      <DependentUpon>Step02_ConfigureHost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\Step02_ConfigureHost.aspx.designer.cs">
+      <DependentUpon>Step02_ConfigureHost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Install\Step03_CreateBlog.aspx.cs">
+      <DependentUpon>Step03_CreateBlog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Install\Step03_CreateBlog.aspx.designer.cs">
+      <DependentUpon>Step03_CreateBlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainFeed.aspx.cs">
+      <DependentUpon>MainFeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NamespaceDocumentation.cs" />
+    <Compile Include="OPML.aspx.cs">
+      <DependentUpon>OPML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\BlogEntryEditor\FTB\ftb.imagegallery.aspx.cs">
+      <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Providers\BlogEntryEditor\FTB\FtbBlogEntryEditorProvider.cs" />
+    <Compile Include="Providers\BlogEntryEditor\PlainText\PlainTextBlogEntryEditorProvider.cs" />
+    <Compile Include="Admin\Services\Ajax\AjaxServices.ashx.cs">
+      <DependentUpon>AjaxServices.ashx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SiteMap\ChangeFrequency.cs" />
+    <Compile Include="SiteMap\SiteMapHttpHandler.ashx.cs">
+      <DependentUpon>SiteMapHttpHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMap\Url.cs" />
+    <Compile Include="SiteMap\UrlCollection.cs" />
+    <Compile Include="Skins\_System\ForgotPassword.Master.cs">
+      <DependentUpon>ForgotPassword.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skins\_System\ForgotPassword.Master.designer.cs">
+      <DependentUpon>ForgotPassword.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\BlogNotActive.aspx.cs">
+      <DependentUpon>BlogNotActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\BlogNotActive.aspx.designer.cs">
+      <DependentUpon>BlogNotActive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\CheckYourConnectionString.aspx.cs">
+      <DependentUpon>CheckYourConnectionString.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\CheckYourConnectionString.aspx.designer.cs">
+      <DependentUpon>CheckYourConnectionString.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\DatabaseLoginFailed.aspx.cs">
+      <DependentUpon>DatabaseLoginFailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\DatabaseLoginFailed.aspx.designer.cs">
+      <DependentUpon>DatabaseLoginFailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\FileNotFound.aspx.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\FileNotFound.aspx.designer.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\SystemMessageTemplate.Master.cs">
+      <DependentUpon>SystemMessageTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\SystemMessageTemplate.Master.designer.cs">
+      <DependentUpon>SystemMessageTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMessages\UpgradeInProgress.aspx.cs">
+      <DependentUpon>UpgradeInProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMessages\UpgradeInProgress.aspx.designer.cs">
+      <DependentUpon>UpgradeInProgress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Aggregate\AggBloggers.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Aggregate\AggBlogStats.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Aggregate\AggPinnedPost.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Aggregate\AggRecentImages.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Aggregate\AggRecentPosts.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Aggregate\AggSyndication.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ArchiveCategory.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ArchiveDay.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ArchiveLinks.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ArchiveMonth.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ArchivePostPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ArticleCategories.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\BaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\BlogStats.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\CachedColumnControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Calendar.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\CategoryDisplay.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\CategoryList.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Comments.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Contact.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\CurrentEntryControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Day.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DayCollection.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\EntryList.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Footer.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\GalleryThumbNailViewer.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Header.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\HomePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ICommentControl.cs" />
+    <Compile Include="UI\Controls\IEntryControl.cs" />
+    <Compile Include="UI\Controls\LinkPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Login.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MonthList.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MyLinks.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\News.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\PageTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\PostCategoryList.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\PostComment.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\PostComment.Designer.cs">
+      <DependentUpon>PostComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\PreviousNext.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RecentComments.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RecentPosts.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RelatedLinks.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SingleColumn.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\StoryList.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SubtextCoComment.cs" />
+    <Compile Include="UI\Controls\SubtextSearch.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TagCloud.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TagEntryList.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Top10Module.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ViewPicture.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ViewPost.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Globals.cs" />
+    <Compile Include="UI\Handlers\BlogSecondaryCssHandler.cs" />
+    <Compile Include="UI\Handlers\RedirectHandler.cs" />
+    <Compile Include="UI\Pages\SubTextMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UIData.cs" />
+    <Compile Include="UI\UIText.cs" />
+    <Compile Include="UI\WebControls\AtomHyperLink.cs" />
+    <Compile Include="UI\WebControls\ContentRegion.cs" />
+    <Compile Include="UI\WebControls\MasterPage.cs" />
+    <Compile Include="UI\WebControls\RssHyperLink.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="default.aspx" />
+    <Content Include="emoticons.txt" />
+    <Content Include="ExternalDependencies\AngryPets.Web.Frameworks.ReverseDOS.dll" />
+    <Content Include="ExternalDependencies\freetextbox.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="MainFeed.aspx" />
+    <Content Include="Admin\Navigation.config" />
+    <Content Include="Admin\Skins.config" />
+    <Content Include="Admin\Web.config" />
+    <Content Include="HostAdmin\Import\Web.config" />
+    <Content Include="HostAdmin\Web.config" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\Comments.aspx.resx">
+      <DependentUpon>Comments.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Configure.aspx.resx">
+      <DependentUpon>Configure.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Confirm.aspx.resx">
+      <DependentUpon>Confirm.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\default.aspx.resx">
+      <DependentUpon>default.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditArticles.aspx.resx">
+      <DependentUpon>EditArticles.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditCategories.aspx.resx">
+      <DependentUpon>EditCategories.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditGalleries.aspx.resx">
+      <DependentUpon>EditGalleries.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditImage.aspx.resx">
+      <DependentUpon>EditImage.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditKeyWords.aspx.resx">
+      <DependentUpon>EditKeyWords.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditLinks.aspx.resx">
+      <DependentUpon>EditLinks.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Error.aspx.resx">
+      <DependentUpon>Error.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ErrorLog.aspx.resx">
+      <DependentUpon>ErrorLog.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Export.aspx.resx">
+      <DependentUpon>Export.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ImportExport.aspx.resx">
+      <DependentUpon>ImportExport.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Options.aspx.resx">
+      <DependentUpon>Options.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Security.aspx.resx">
+      <DependentUpon>Security.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Preferences.aspx.resx">
+      <DependentUpon>Preferences.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Referrers.aspx.resx">
+      <DependentUpon>Referrers.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Statistics.aspx.resx">
+      <DependentUpon>Statistics.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\StatsView.aspx.resx">
+      <DependentUpon>StatsView.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Syndication.aspx.resx">
+      <DependentUpon>Syndication.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\EntryEditor.ascx.resx">
+      <DependentUpon>EntryEditor.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="default.aspx.resx">
+      <DependentUpon>default.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\ChangePassword.aspx.resx">
+      <DependentUpon>ChangePassword.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\ErrorLog.aspx.resx">
+      <DependentUpon>ErrorLog.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Import\ImportComplete.aspx.resx">
+      <DependentUpon>ImportComplete.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Import\ImportStart.aspx.resx">
+      <DependentUpon>ImportStart.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Import\Step01_SelectImportProvider.aspx.resx">
+      <DependentUpon>Step01_SelectImportProvider.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Import\Step02_GatherInfo.aspx.resx">
+      <DependentUpon>Step02_GatherInfo.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Queue.aspx.resx">
+      <DependentUpon>Queue.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Upgrade\Default.aspx.resx">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\Upgrade\UpgradeComplete.aspx.resx">
+      <DependentUpon>UpgradeComplete.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\UserControls\BlogsEditor.ascx.resx">
+      <DependentUpon>BlogsEditor.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostAdmin\UserControls\GroupsEditor.ascx.resx">
+      <DependentUpon>GroupsEditor.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Install\BlogNotConfiguredError.aspx.resx">
+      <DependentUpon>BlogNotConfiguredError.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Install\Default.aspx.resx">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Install\InstallationComplete.aspx.resx">
+      <DependentUpon>InstallationComplete.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Install\Step02_ConfigureHost.aspx.resx">
+      <DependentUpon>Step02_ConfigureHost.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Install\Step03_CreateBlog.aspx.resx">
+      <DependentUpon>Step03_CreateBlog.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.aspx.resx">
+      <DependentUpon>login.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logout.aspx.resx">
+      <DependentUpon>logout.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFeed.aspx.resx">
+      <DependentUpon>MainFeed.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPML.aspx.resx">
+      <DependentUpon>OPML.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Providers\BlogEntryEditor\FTB\ftb.imagegallery.aspx.resx">
+      <DependentUpon>ftb.imagegallery.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Providers\BlogEntryEditor\FTB\resources\ErrorMessages.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Providers\BlogEntryEditor\PlainText\resources\ErrorMessages.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemMessages\BlogNotActive.aspx.resx">
+      <DependentUpon>BlogNotActive.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemMessages\CheckYourConnectionString.aspx.resx">
+      <DependentUpon>CheckYourConnectionString.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemMessages\Error.aspx.resx">
+      <DependentUpon>Error.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemMessages\FileNotFound.aspx.resx">
+      <DependentUpon>FileNotFound.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemMessages\UpgradeInProgress.aspx.resx">
+      <DependentUpon>UpgradeInProgress.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OPML.aspx" />
+    <Content Include="ReleaseNotes.txt" />
+    <Content Include="transform.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Articles\Default.aspx" />
+    <Content Include="Admin\Articles\Edit.aspx" />
+    <Content Include="Admin\Comments.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Admin\Configure.aspx" />
+    <Content Include="Admin\Confirm.aspx" />
+    <Content Include="Admin\Customize.aspx" />
+    <Content Include="Admin\default.aspx" />
+    <Content Include="Admin\EditArticles.aspx" />
+    <Content Include="Admin\EditCategories.aspx" />
+    <Content Include="Admin\EditGalleries.aspx" />
+    <Content Include="Admin\EditImage.aspx" />
+    <Content Include="Admin\EditKeyWords.aspx" />
+    <Content Include="Admin\EditLinks.aspx" />
+    <Content Include="Admin\Error.aspx" />
+    <Content Include="Admin\ErrorLog.aspx" />
+    <Content Include="Admin\Export.aspx" />
+    <Content Include="Admin\Feedback\Default.aspx" />
+    <Content Include="Admin\Feedback\Edit.aspx" />
+    <Content Include="Admin\ImportExport.aspx" />
+    <Content Include="Admin\license.txt" />
+    <Content Include="Admin\Options.aspx" />
+    <Content Include="Admin\Resources\mobile.css" />
+    <Content Include="Admin\Security.aspx" />
+    <Content Include="Admin\Posts\Default.aspx" />
+    <Content Include="Admin\Posts\Edit.aspx" />
+    <Content Include="Admin\Preferences.aspx" />
+    <Content Include="Admin\Referrers.aspx" />
+    <Content Include="Admin\Resources\admin.css" />
+    <Content Include="Admin\Resources\bg.gif" />
+    <Content Include="Admin\Resources\bg_body.gif" />
+    <Content Include="Admin\Resources\bg_tabs.gif" />
+    <Content Include="Admin\Resources\ie6admin.css" />
+    <Content Include="Admin\Resources\ie7admin.css" />
+    <Content Include="Admin\Resources\poweredbydotnet.gif" />
+    <Content Include="Admin\Resources\Scripts\Admin.js" />
+    <Content Include="Admin\Resources\Scripts\autoTab.js" />
+    <Content Include="Admin\Resources\Scripts\comboBox.js" />
+    <Content Include="Admin\Resources\Scripts\helptip.css" />
+    <Content Include="Admin\Resources\Scripts\helptip.js" />
+    <Content Include="Admin\Resources\Scripts\Images\bottom.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\button.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\checkbox.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\input.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\ms_information_small.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\radio.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\select_bg.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\select_left.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\select_right.gif" />
+    <Content Include="Admin\Resources\Scripts\Images\sidesbg.jpg" />
+    <Content Include="Admin\Resources\Scripts\Images\textarea.gif" />
+    <Content Include="Admin\Resources\Scripts\labelFocus.js" />
+    <Content Include="Admin\Resources\toggle_gray_down.gif" />
+    <Content Include="Admin\Resources\toggle_gray_up.gif" />
+    <Content Include="Admin\RssFeeds.aspx" />
+    <Content Include="Admin\Statistics.aspx" />
+    <Content Include="Admin\StatsView.aspx" />
+    <Content Include="Admin\Syndication.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Admin\UserControls\CategoryLinkList.ascx" />
+    <Content Include="Admin\UserControls\EntriesList.ascx" />
+    <Content Include="Admin\UserControls\EntryEditor.ascx" />
+    <Content Include="Admin\Credits.aspx" />
+    <Content Include="App_Data\Subtext2.0.mdf">
+    </Content>
+    <Content Include="DTP.aspx" />
+    <Content Include="ExternalDependencies\FreeTextBox.xml" />
+    <Content Include="ExternalDependencies\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="ExternalDependencies\Identicon.dll" />
+    <Content Include="ExternalDependencies\log4net.dll" />
+    <Content Include="ExternalDependencies\log4net.xml" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="HostAdmin\ChangePassword.aspx" />
+    <Content Include="HostAdmin\ManageGroups.aspx" />
+    <Content Include="HostAdmin\Default.aspx" />
+    <Content Include="HostAdmin\ErrorLog.aspx" />
+    <Content Include="HostAdmin\images\bottom.gif" />
+    <Content Include="HostAdmin\images\shadow.gif" />
+    <Content Include="HostAdmin\images\shadowAlpha.png" />
+    <Content Include="HostAdmin\images\sidesbg.jpg" />
+    <Content Include="HostAdmin\Import\ImportComplete.aspx" />
+    <Content Include="HostAdmin\Import\ImportStart.aspx" />
+    <Content Include="HostAdmin\Import\Step01_SelectImportProvider.aspx" />
+    <Content Include="HostAdmin\Import\Step02_GatherInfo.aspx" />
+    <Content Include="HostAdmin\Queue.aspx" />
+    <Content Include="HostAdmin\Scripts\helptip.css" />
+    <Content Include="HostAdmin\Scripts\helptip.js" />
+    <Content Include="HostAdmin\styles\Style.css" />
+    <Content Include="HostAdmin\Upgrade\Default.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="HostAdmin\Upgrade\UpgradeComplete.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="HostAdmin\UserControls\BlogsEditor.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="HostAdmin\UserControls\GroupsEditor.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Images\accept.png" />
+    <Content Include="Images\admin.gif" />
+    <Content Include="Images\administration_icon.gif" />
+    <Content Include="Images\arrow_undo.png" />
+    <Content Include="Images\atom.gif" />
+    <Content Include="Images\atomsmall.gif" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\closelabel.gif" />
+    <Content Include="Images\contact.gif" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\default_gravatar.png" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\email.gif" />
+    <Content Include="Images\emotions\emotions.gif" />
+    <Content Include="Images\emotions\readme.txt" />
+    <Content Include="Images\emotions\smiley-cool.gif" />
+    <Content Include="Images\emotions\smiley-cry.gif" />
+    <Content Include="Images\emotions\smiley-embarassed.gif" />
+    <Content Include="Images\emotions\smiley-foot-in-mouth.gif" />
+    <Content Include="Images\emotions\smiley-frown.gif" />
+    <Content Include="Images\emotions\smiley-innocent.gif" />
+    <Content Include="Images\emotions\smiley-kiss.gif" />
+    <Content Include="Images\emotions\smiley-laughing.gif" />
+    <Content Include="Images\emotions\smiley-money-mouth.gif" />
+    <Content Include="Images\emotions\smiley-sealed.gif" />
+    <Content Include="Images\emotions\smiley-smile.gif" />
+    <Content Include="Images\emotions\smiley-surprised.gif" />
+    <Content Include="Images\emotions\smiley-tongue-out.gif" />
+    <Content Include="Images\emotions\smiley-undecided.gif" />
+    <Content Include="Images\emotions\smiley-wink.gif" />
+    <Content Include="Images\emotions\smiley-yell.gif" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\exclamation.png" />
+    <Content Include="Images\friends.png" />
+    <Content Include="Images\home.gif" />
+    <Content Include="Images\icn_delete.gif" />
+    <Content Include="Images\icons\cc_icon_attribution_small.gif" />
+    <Content Include="Images\icons\cc_icon_noderivs_small.gif" />
+    <Content Include="Images\icons\cc_icon_noncomm_small.gif" />
+    <Content Include="Images\icons\cc_icon_sharealike_small.gif" />
+    <Content Include="Images\icons\help-med.png" />
+    <Content Include="Images\icons\help-small.png" />
+    <Content Include="Images\icons\ico_critical.gif" />
+    <Content Include="Images\icons\ico_info.gif" />
+    <Content Include="Images\icons\ico_warning.gif" />
+    <Content Include="Images\link.gif" />
+    <Content Include="Images\loaders\subtext-bar-green.gif" />
+    <Content Include="Images\loaders\subtext-bar-loader.gif" />
+    <Content Include="Images\loaders\subtext-loader.gif" />
+    <Content Include="Images\loaders\subtext-round-tracer.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\ms_help.gif" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\nextlabel.gif" />
+    <Content Include="Images\pencil.png" />
+    <Content Include="Images\permalink.gif" />
+    <Content Include="Images\PoweredByAsp.Net.gif" />
+    <Content Include="Images\PoweredBySubtext85x33.png" />
+    <Content Include="Images\prev.gif" />
+    <Content Include="Images\prevlabel.gif" />
+    <Content Include="Images\printer.png" />
+    <Content Include="Images\rss20icon.gif" />
+    <Content Include="Images\Rss2Image.gif" />
+    <Content Include="Images\shadow.gif" />
+    <Content Include="Images\shadowAlpha.png" />
+    <Content Include="Images\share-icon-10x10.png" />
+    <Content Include="Images\share-icon-12x12.png" />
+    <Content Include="Images\share-icon-16x16.png" />
+    <Content Include="Images\sublogo-80x80.png" />
+    <Content Include="Images\SubtextLogo.png" />
+    <Content Include="Images\subtextLogo32-23.png" />
+    <Content Include="Images\SubtextLogo_small.png" />
+    <Content Include="Images\subtextWatermark.png" />
+    <Content Include="Images\tag_blue.png" />
+    <Content Include="Images\tag_blue_add.png" />
+    <Content Include="Images\tag_blue_delete.png" />
+    <Content Include="Images\tag_blue_edit.png" />
+    <Content Include="Images\xfn-child.png" />
+    <Content Include="Images\xfn-colleague-met.png" />
+    <Content Include="Images\xfn-colleague.png" />
+    <Content Include="Images\xfn-friend-met.png" />
+    <Content Include="Images\xfn-friend.png" />
+    <Content Include="Images\xfn-me.png" />
+    <Content Include="Images\xfn-parent.png" />
+    <Content Include="Images\xfn-small.png" />
+    <Content Include="Images\xfn-spouse.png" />
+    <Content Include="Images\xfn-sweetheart-met.png" />
+    <Content Include="Images\xfn-sweetheart.png" />
+    <Content Include="Images\xfn.png" />
+    <Content Include="Images\xml.gif" />
+    <Content Include="Install\BlogNotConfiguredError.aspx" />
+    <Content Include="Install\Default.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Install\InstallationComplete.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Install\Step02_ConfigureHost.aspx" />
+    <Content Include="Install\Step03_CreateBlog.aspx" />
+    <Content Include="Install\Style\InstallationStyle.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\customConfiguration\subtextconfig.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\behaviors\disablehandles.htc" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\behaviors\hiddenfield.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\behaviors\hiddenfield.htc" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\behaviors\showtableborders.htc" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\fck_editorarea.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\fck_internal.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\fck_showtableborders_gecko.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\images\fck_anchor.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\images\fck_flashlogo.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\css\images\fck_pagebreak.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\fcknumericfield.htc" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\fck_dialog_common.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\fck_dialog_common.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\images\locked.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\images\reset.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\images\unlocked.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\common\moz-bindings.xml" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_about.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_about\lgpl.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_about\logo_fckeditor.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_about\logo_fredck.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_anchor.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_button.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_checkbox.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_colorselector.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_docprops.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_docprops\fck_document_preview.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_find.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_flash.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_flash\fck_flash.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_flash\fck_flash_preview.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_form.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_hiddenfield.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_image.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_image\fck_image.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_image\fck_image_preview.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_link.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_link\fck_link.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_listprop.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_paste.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_radiobutton.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_replace.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_select.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_select\fck_select.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_smiley.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_source.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_specialchar.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\blank.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\controls.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\controlWindow.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\spellchecker.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\spellChecker.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\spellerStyle.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\wordWindow.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_table.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_tablecell.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_template.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_template\images\template1.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_template\images\template2.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_template\images\template3.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_textarea.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_textfield.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\00.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\data.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\diacritic.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\dialogue.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\fck_universalkey.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\keyboard_layout.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_universalkey\multihexa.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\fckblank.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\fckdebug.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\fckdialog.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\fckdocument.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\fckeditor.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\fckeditor.original.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\browser.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\browser.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\connectors\aspx\connector.aspx" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\frmactualfolder.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\frmcreatefolder.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\frmfolders.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\frmresourceslist.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\frmresourcetype.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\frmupload.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\ButtonArrow.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\Folder.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\Folder32.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\FolderOpened.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\FolderOpened32.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\FolderUp.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\ai.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\avi.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\bmp.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\cs.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\default.icon.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\dll.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\doc.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\exe.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\fla.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\gif.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\htm.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\html.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\jpg.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\js.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\mdb.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\mp3.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\pdf.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\ppt.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\rdp.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\swf.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\swt.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\txt.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\vsd.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\xls.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\xml.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\zip.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\ai.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\avi.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\bmp.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\cs.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\default.icon.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\dll.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\doc.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\exe.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\fla.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\gif.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\htm.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\html.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\jpg.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\js.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\mdb.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\mp3.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\pdf.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\ppt.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\rdp.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\swf.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\swt.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\txt.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\vsd.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\xls.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\xml.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\zip.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\spacer.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\js\common.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\js\fckxml.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\upload\aspx\upload.aspx" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\anchor.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\arrow_ltr.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\arrow_rtl.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\angel_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\angry_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\broken_heart.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\cake.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\confused_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\cry_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\devil_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\embaressed_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\envelope.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\heart.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\kiss.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\lightbulb.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\omg_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\regular_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\sad_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\shades_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\teeth_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\thumbs_down.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\thumbs_up.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\tounge_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\whatchutalkingabout_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\smiley\msn\wink_smile.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\images\spacer.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\js\fckeditorcode_gecko.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\js\fckeditorcode_ie.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ar.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\bg.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\bn.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\bs.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ca.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\cs.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\da.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\de.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\el.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\en-au.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\en-ca.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\en-uk.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\en.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\eo.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\es.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\et.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\eu.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\fa.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\fcklanguagemanager.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\fi.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\fo.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\fr.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\gl.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\he.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\hi.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\hr.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\hu.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\it.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ja.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\km.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ko.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\lt.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\lv.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\mn.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ms.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\nl.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\no.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\pl.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\pt-br.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\pt.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ro.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\ru.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\sk.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\sl.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\sr-latn.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\sr.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\sv.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\th.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\tr.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\uk.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\vi.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\zh-cn.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\lang\zh.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\autogrow\fckplugin.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\fckplugin.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\fck_placeholder.html" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\lang\de.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\lang\en.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\lang\fr.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\lang\it.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\lang\pl.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\placeholder\placeholder.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\simplecommands\fckplugin.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\tablecommands\fckplugin.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\taglinks\fckplugin.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\taglinks\images\taglinks.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\plugins\taglinks\lang\en.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\fck_dialog.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\fck_editor.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\fck_strip.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.arrowright.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.buttonarrow.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.collapse.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.end.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.expand.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.separator.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\default\images\toolbar.start.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\fck_dialog.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\fck_editor.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\fck_strip.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\office.start.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.arrowright.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.bg.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.buttonarrow.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.collapse.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.end.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.expand.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.separator.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\office2003\images\toolbar.start.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\fck_dialog.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\fck_editor.css" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\fck_strip.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.arrowright.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.buttonarrow.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.buttonbg.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.collapse.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.end.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.expand.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.separator.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\skins\silver\images\toolbar.start.gif" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\fckconfig.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\fckeditor.js" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\fckstyles.xml" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\fcktemplates.xml" />
+    <Content Include="Providers\BlogEntryEditor\FTB\ftb.imagegallery.aspx" />
+    <Content Include="Scripts\AmazonTooltips.js" />
+    <Content Include="Scripts\blank.gif" />
+    <Content Include="Scripts\builder.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\controls.js" />
+    <Content Include="Scripts\dragdrop.js" />
+    <Content Include="Scripts\effects.js" />
+    <Content Include="Scripts\ExternalLinks.js" />
+    <Content Include="Scripts\InPlaceEdit.js" />
+    <Content Include="Scripts\jquery-1.2.1.min.js" />
+    <Content Include="Scripts\jquery.color.min.js" />
+    <Content Include="Scripts\jquery.hotkeys.min.js" />
+    <Content Include="Scripts\json.js" />
+    <Content Include="Scripts\lightbox.css" />
+    <Content Include="Scripts\lightbox.js" />
+    <Content Include="Scripts\LiveCommentPreview.js" />
+    <Content Include="Scripts\prototype.js" />
+    <Content Include="Scripts\scriptaculous.js" />
+    <Content Include="Scripts\tableEffects.js" />
+    <Content Include="Scripts\XFNHighlighter.css" />
+    <Content Include="Scripts\XFNHighlighter.js" />
+    <Content Include="Skins\Aggregate\Simple\blue.css" />
+    <Content Include="Skins\Aggregate\Simple\Controls\AggBloggers.ascx" />
+    <Content Include="Skins\Aggregate\Simple\Controls\AggBlogStats.ascx" />
+    <Content Include="Skins\Aggregate\Simple\Controls\AggPinnedPost.ascx" />
+    <Content Include="Skins\Aggregate\Simple\Controls\AggRecentImages.ascx" />
+    <Content Include="Skins\Aggregate\Simple\Controls\AggRecentPosts.ascx" />
+    <Content Include="Skins\Aggregate\Simple\Controls\AggSyndication.ascx" />
+    <Content Include="Skins\Aggregate\Simple\PageTemplate.ascx" />
+    <Content Include="Skins\Aggregate\Simple\style.css" />
+    <Content Include="Skins\AnotherEon001\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\BlogStats.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\CategoryList.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\Comments.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\Contact.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\Day.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\DayCollection.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\EntryList.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\Footer.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\Header.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\HomePage.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\Login.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\MonthListings.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\MyLinks.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\News.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\PostCategoryList.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\PostComment.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\TagCloud.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\ViewPost.ascx" />
+    <Content Include="Skins\AnotherEon001\Controls\_Header.ascx" />
+    <Content Include="Skins\AnotherEon001\images\ajax-loader.gif" />
+    <Content Include="Skins\AnotherEon001\License.txt" />
+    <Content Include="Skins\AnotherEon001\PageTemplate.ascx" />
+    <Content Include="Skins\AnotherEon001\print.css" />
+    <Content Include="Skins\AnotherEon001\style.css" />
+    <Content Include="Skins\Mobile\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Mobile\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Mobile\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Mobile\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Mobile\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Mobile\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Mobile\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Mobile\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Mobile\Controls\Comments.ascx" />
+    <Content Include="Skins\Mobile\Controls\Contact.ascx" />
+    <Content Include="Skins\Mobile\Controls\Day.ascx" />
+    <Content Include="Skins\Mobile\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Mobile\Controls\EntryList.ascx" />
+    <Content Include="Skins\Mobile\Controls\Footer.ascx" />
+    <Content Include="Skins\Mobile\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Mobile\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Mobile\Controls\Header.ascx" />
+    <Content Include="Skins\Mobile\Controls\HomePage.ascx" />
+    <Content Include="Skins\Mobile\Controls\Login.ascx" />
+    <Content Include="Skins\Mobile\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Mobile\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Mobile\Controls\News.ascx" />
+    <Content Include="Skins\Mobile\Controls\PostCategoryList.ascx" />
+    <Content Include="Skins\Mobile\Controls\PostComment.ascx" />
+    <Content Include="Skins\Mobile\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Mobile\Controls\RecentComments.ascx" />
+    <Content Include="Skins\Mobile\Controls\RecentPosts.ascx" />
+    <Content Include="Skins\Mobile\Controls\ShareThisPost.ascx" />
+    <Content Include="Skins\Mobile\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Mobile\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Mobile\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Mobile\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Mobile\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Mobile\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Mobile\PageTemplate.ascx" />
+    <Content Include="Skins\Mobile\ReadMe.txt" />
+    <Content Include="Skins\Mobile\style.css" />
+    <Content Include="Skins\GlossyBlue\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\BlogStats.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\CategoryList.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Comments.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Contact.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Day.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\DayCollection.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\EntryList.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Footer.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Header.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\HomePage.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Login.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\MonthListings.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\MyLinks.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\News.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\PostComment.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\RecentComments.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\Syndications.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\GlossyBlue\Controls\ViewPost.ascx" />
+    <Content Include="Skins\GlossyBlue\images\btn-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\content-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\date-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\footer-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\footer-right-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\header-bg.jpg" />
+    <Content Include="Skins\GlossyBlue\images\header-icon.gif" />
+    <Content Include="Skins\GlossyBlue\images\main-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-blogroll.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-calendar.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-category.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-comments.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-footer-comments.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-footer-post.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-loginout.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-monthly-archive.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-nav-left.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-nav-right.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-page-arrow.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-page.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-recent-comments.gif" />
+    <Content Include="Skins\GlossyBlue\images\mini-rss.gif" />
+    <Content Include="Skins\GlossyBlue\images\nav-button-bg.gif" />
+    <Content Include="Skins\GlossyBlue\images\search-btn-bg.gif" />
+    <Content Include="Skins\GlossyBlue\PageTemplate.ascx" />
+    <Content Include="Skins\GlossyBlue\Styles\glossyblue-main.css" />
+    <Content Include="Skins\GlossyBlue\Styles\glossyblue-print.css" />
+    <Content Include="Skins\Lightz\Scripts\cityNight.js" />
+    <Content Include="Skins\Lightz\Scripts\tableEffects.js" />
+    <Content Include="Skins\Colors\Blue.css" />
+    <Content Include="Skins\Colors\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Colors\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Colors\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Colors\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Colors\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Colors\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Colors\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Colors\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Colors\Controls\Comments.ascx" />
+    <Content Include="Skins\Colors\Controls\Contact.ascx" />
+    <Content Include="Skins\Colors\Controls\Day.ascx" />
+    <Content Include="Skins\Colors\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Colors\Controls\EntryList.ascx" />
+    <Content Include="Skins\Colors\Controls\Footer.ascx" />
+    <Content Include="Skins\Colors\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Colors\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Colors\Controls\Header.ascx" />
+    <Content Include="Skins\Colors\Controls\HomePage.ascx" />
+    <Content Include="Skins\Colors\Controls\Login.ascx" />
+    <Content Include="Skins\Colors\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Colors\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Colors\Controls\News.ascx" />
+    <Content Include="Skins\Colors\Controls\PostComment.ascx" />
+    <Content Include="Skins\Colors\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Colors\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\Colors\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Colors\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Colors\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Colors\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Colors\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Colors\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Colors\Images\shadow.gif" />
+    <Content Include="Skins\Colors\Images\shadowAlpha.png" />
+    <Content Include="Skins\Colors\PageTemplate.ascx" />
+    <Content Include="Skins\Colors\print.css" />
+    <Content Include="Skins\Colors\ScarletAndGrey-search.css" />
+    <Content Include="Skins\Colors\ScarletAndGrey.css" />
+    <Content Include="Skins\Colors\search.css" />
+    <Content Include="Skins\Colors\Style.css" />
+    <Content Include="Skins\Gradient\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Gradient\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Gradient\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Gradient\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Gradient\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Gradient\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Gradient\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Gradient\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Gradient\Controls\Comments.ascx" />
+    <Content Include="Skins\Gradient\Controls\Contact.ascx" />
+    <Content Include="Skins\Gradient\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Gradient\Controls\Day.ascx" />
+    <Content Include="Skins\Gradient\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Gradient\Controls\EntryList.ascx" />
+    <Content Include="Skins\Gradient\Controls\Footer.ascx" />
+    <Content Include="Skins\Gradient\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Gradient\Controls\Header.ascx" />
+    <Content Include="Skins\Gradient\Controls\HomePage.ascx" />
+    <Content Include="Skins\Gradient\Controls\Login.ascx" />
+    <Content Include="Skins\Gradient\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Gradient\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Gradient\Controls\News.ascx" />
+    <Content Include="Skins\Gradient\Controls\PostComment.ascx" />
+    <Content Include="Skins\Gradient\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Gradient\Controls\RecentComments.ascx" />
+    <Content Include="Skins\Gradient\Controls\RecentPosts.ascx" />
+    <Content Include="Skins\Gradient\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\Gradient\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Gradient\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Gradient\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Gradient\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Gradient\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Gradient\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Gradient\IEPatches.css" />
+    <Content Include="Skins\Gradient\Images\CommentAuthorGradient.gif" />
+    <Content Include="Skins\Gradient\PageTemplate.ascx" />
+    <Content Include="Skins\Gradient\print.css" />
+    <Content Include="Skins\Gradient\style.css" />
+    <Content Include="Skins\KeyWest\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\KeyWest\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\KeyWest\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\KeyWest\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\KeyWest\Controls\BlogStats.ascx" />
+    <Content Include="Skins\KeyWest\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\KeyWest\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\KeyWest\Controls\CategoryList.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Comments.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Contact.ascx" />
+    <Content Include="Skins\KeyWest\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Day.ascx" />
+    <Content Include="Skins\KeyWest\Controls\DayCollection.ascx" />
+    <Content Include="Skins\KeyWest\Controls\EntryList.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Footer.ascx" />
+    <Content Include="Skins\KeyWest\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Header.ascx" />
+    <Content Include="Skins\KeyWest\Controls\HomePage.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Login.ascx" />
+    <Content Include="Skins\KeyWest\Controls\MonthListings.ascx" />
+    <Content Include="Skins\KeyWest\Controls\MyLinks.ascx" />
+    <Content Include="Skins\KeyWest\Controls\News.ascx" />
+    <Content Include="Skins\KeyWest\Controls\PostComment.ascx" />
+    <Content Include="Skins\KeyWest\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\KeyWest\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\KeyWest\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\KeyWest\Controls\SubTextBlogCalendar.ascx" />
+    <Content Include="Skins\KeyWest\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\KeyWest\Controls\Syndications.ascx" />
+    <Content Include="Skins\KeyWest\Controls\TagCloud.ascx" />
+    <Content Include="Skins\KeyWest\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\KeyWest\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\KeyWest\Controls\ViewPost.ascx" />
+    <Content Include="Skins\KeyWest\Images\comment_bg.jpg" />
+    <Content Include="Skins\KeyWest\Images\comment_button_blockquote.jpg" />
+    <Content Include="Skins\KeyWest\Images\comment_button_bold.jpg" />
+    <Content Include="Skins\KeyWest\Images\comment_button_hyperlink.jpg" />
+    <Content Include="Skins\KeyWest\Images\comment_button_italic.jpg" />
+    <Content Include="Skins\KeyWest\Images\comment_button_underline.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_footer_center.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_footer_left.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_footer_right.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_head_center.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_head_left.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_head_right.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_side_left.jpg" />
+    <Content Include="Skins\KeyWest\Images\content_side_right.jpg" />
+    <Content Include="Skins\KeyWest\Images\kw_body_center.jpg" />
+    <Content Include="Skins\KeyWest\Images\kw_body_left.jpg" />
+    <Content Include="Skins\KeyWest\Images\kw_body_right.jpg" />
+    <Content Include="Skins\KeyWest\Images\kw_comments.jpg" />
+    <Content Include="Skins\KeyWest\Images\kw_header.jpg" />
+    <Content Include="Skins\KeyWest\Images\kw_header_bg.jpg" />
+    <Content Include="Skins\KeyWest\Images\PoweredBySubtext85x33.png" />
+    <Content Include="Skins\KeyWest\Images\sidebar_bg.jpg" />
+    <Content Include="Skins\KeyWest\Images\sidebar_footer.jpg" />
+    <Content Include="Skins\KeyWest\Images\sidebar_header.jpg" />
+    <Content Include="Skins\KeyWest\Images\title_bg.gif" />
+    <Content Include="Skins\KeyWest\PageTemplate.ascx" />
+    <Content Include="Skins\KeyWest\print.css" />
+    <Content Include="Skins\KeyWest\README.txt" />
+    <Content Include="Skins\KeyWest\style.css" />
+    <Content Include="Skins\Lightz\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Lightz\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Lightz\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Lightz\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Lightz\Controls\ArchivePostPage.ascx" />
+    <Content Include="Skins\Lightz\Controls\ArticleCategories.ascx" />
+    <Content Include="Skins\Lightz\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Lightz\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Lightz\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Lightz\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Lightz\Controls\Comments.ascx" />
+    <Content Include="Skins\Lightz\Controls\Contact.ascx" />
+    <Content Include="Skins\Lightz\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Lightz\Controls\Day.ascx" />
+    <Content Include="Skins\Lightz\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Lightz\Controls\EntryList.ascx" />
+    <Content Include="Skins\Lightz\Controls\Footer.ascx" />
+    <Content Include="Skins\Lightz\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Lightz\Controls\Header.ascx" />
+    <Content Include="Skins\Lightz\Controls\HomePage.ascx" />
+    <Content Include="Skins\Lightz\Controls\LinkPage.ascx" />
+    <Content Include="Skins\Lightz\Controls\Login.ascx" />
+    <Content Include="Skins\Lightz\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Lightz\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Lightz\Controls\News.ascx" />
+    <Content Include="Skins\Lightz\Controls\PostComment.ascx" />
+    <Content Include="Skins\Lightz\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Lightz\Controls\RecentComments.ascx" />
+    <Content Include="Skins\Lightz\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\Lightz\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Lightz\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Lightz\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Lightz\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Lightz\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Lightz\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Lightz\Images\day_footer.gif" />
+    <Content Include="Skins\Lightz\Images\day_header.gif" />
+    <Content Include="Skins\Lightz\Images\header.gif" />
+    <Content Include="Skins\Lightz\Images\main_background.gif" />
+    <Content Include="Skins\Lightz\Images\post_footer.gif" />
+    <Content Include="Skins\Lightz\Images\xml.gif" />
+    <Content Include="Skins\Lightz\PageTemplate.ascx" />
+    <Content Include="Skins\Lightz\print.css" />
+    <Content Include="Skins\Lightz\style.css" />
+    <Content Include="Skins\Naked\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Naked\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Naked\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Naked\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Naked\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Naked\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Naked\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Naked\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Naked\Controls\Comments.ascx" />
+    <Content Include="Skins\Naked\Controls\Contact.ascx" />
+    <Content Include="Skins\Naked\Controls\Day.ascx" />
+    <Content Include="Skins\Naked\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Naked\Controls\EntryList.ascx" />
+    <Content Include="Skins\Naked\Controls\Footer.ascx" />
+    <Content Include="Skins\Naked\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Naked\Controls\Header.ascx" />
+    <Content Include="Skins\Naked\Controls\HomePage.ascx" />
+    <Content Include="Skins\Naked\Controls\Login.ascx" />
+    <Content Include="Skins\Naked\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Naked\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Naked\Controls\News.ascx" />
+    <Content Include="Skins\Naked\Controls\PostCategoryList.ascx" />
+    <Content Include="Skins\Naked\Controls\PostComment.ascx" />
+    <Content Include="Skins\Naked\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Naked\Controls\RecentComments.ascx" />
+    <Content Include="Skins\Naked\Controls\RecentPosts.ascx" />
+    <Content Include="Skins\Naked\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Naked\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Naked\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Naked\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Naked\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Naked\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Naked\PageTemplate.ascx" />
+    <Content Include="Skins\Naked\ReadMe.txt" />
+    <Content Include="Skins\Naked\Controls\ShareThisPost.ascx" />
+    <Content Include="Skins\Naked\style.css" />
+    <Content Include="Skins\Nature\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Nature\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Nature\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Nature\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Nature\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Nature\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Nature\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Nature\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Nature\Controls\Comments.ascx" />
+    <Content Include="Skins\Nature\Controls\Contact.ascx" />
+    <Content Include="Skins\Nature\Controls\Day.ascx" />
+    <Content Include="Skins\Nature\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Nature\Controls\EntryList.ascx" />
+    <Content Include="Skins\Nature\Controls\Footer.ascx" />
+    <Content Include="Skins\Nature\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Nature\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Nature\Controls\Header.ascx" />
+    <Content Include="Skins\Nature\Controls\HomePage.ascx" />
+    <Content Include="Skins\Nature\Controls\Login.ascx" />
+    <Content Include="Skins\Nature\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Nature\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Nature\Controls\News.ascx" />
+    <Content Include="Skins\Nature\Controls\PostComment.ascx" />
+    <Content Include="Skins\Nature\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Nature\Controls\RecentPosts.ascx" />
+    <Content Include="Skins\Nature\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\Nature\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Nature\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Nature\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Nature\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Nature\Controls\Top10Module.ascx" />
+    <Content Include="Skins\Nature\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Nature\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Nature\images\article.jpg" />
+    <Content Include="Skins\Nature\images\CommentAuthorGradient.gif" />
+    <Content Include="Skins\Nature\images\CommentIcon.gif" />
+    <Content Include="Skins\Nature\images\leafy\articlenormal.jpg" />
+    <Content Include="Skins\Nature\images\leafy\headers.jpg" />
+    <Content Include="Skins\Nature\images\leafy\link.jpg" />
+    <Content Include="Skins\Nature\images\leafy\mainbg.jpg" />
+    <Content Include="Skins\Nature\images\leafy\leaves.jpg" />
+    <Content Include="Skins\Nature\images\menubg.jpg" />
+    <Content Include="Skins\Nature\images\rain\bluewetglass.gif" />
+    <Content Include="Skins\Nature\images\rain\fadedwaterdrop.jpg" />
+    <Content Include="Skins\Nature\images\rain\link.jpg" />
+    <Content Include="Skins\Nature\images\rain\mainbg.jpg" />
+    <Content Include="Skins\Nature\images\rain\waterdrop.jpg" />
+    <Content Include="Skins\Nature\leafy.css" />
+    <Content Include="Skins\Nature\PageTemplate.ascx" />
+    <Content Include="Skins\Nature\print.css" />
+    <Content Include="Skins\Nature\rain.css" />
+    <Content Include="Skins\Nature\style.css" />
+    <Content Include="Skins\origami\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\origami\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\origami\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\origami\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\origami\Controls\CategoryList.ascx" />
+    <Content Include="Skins\origami\Controls\Comments.ascx" />
+    <Content Include="Skins\origami\Controls\Contact.ascx" />
+    <Content Include="Skins\origami\Controls\Day.ascx" />
+    <Content Include="Skins\origami\Controls\DayCollection.ascx" />
+    <Content Include="Skins\origami\Controls\EntryList.ascx" />
+    <Content Include="Skins\origami\Controls\Footer.ascx" />
+    <Content Include="Skins\origami\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\origami\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\origami\Controls\Header.ascx" />
+    <Content Include="Skins\origami\Controls\HomePage.ascx" />
+    <Content Include="Skins\origami\Controls\MyLinks.ascx" />
+    <Content Include="Skins\origami\Controls\News.ascx" />
+    <Content Include="Skins\origami\Controls\PostComment.ascx" />
+    <Content Include="Skins\origami\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\origami\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\origami\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\origami\Controls\SyndicationLinks.ascx" />
+    <Content Include="Skins\origami\Controls\TagCloud.ascx" />
+    <Content Include="Skins\origami\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\origami\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\origami\Controls\ViewPost.ascx" />
+    <Content Include="Skins\origami\images\bg_85PercentWhite.png" />
+    <Content Include="Skins\origami\images\bg_blockquote.png" />
+    <Content Include="Skins\origami\images\bg_blockquoteAlternate.png" />
+    <Content Include="Skins\origami\images\bg_body.jpg" />
+    <Content Include="Skins\origami\images\bg_body.png" />
+    <Content Include="Skins\origami\images\bg_commentAlternate.png" />
+    <Content Include="Skins\origami\images\bg_commentAuthorGradient.png" />
+    <Content Include="Skins\origami\images\bg_commentNormal.png" />
+    <Content Include="Skins\origami\images\bg_commentPreview.png" />
+    <Content Include="Skins\origami\images\bg_contentLeftNav.png" />
+    <Content Include="Skins\origami\images\bg_contentRightNav.png" />
+    <Content Include="Skins\origami\images\bg_footer.png" />
+    <Content Include="Skins\origami\images\bg_header-02.jpg" />
+    <Content Include="Skins\origami\images\bg_header.png" />
+    <Content Include="Skins\origami\images\bg_liveSearchLeft.png" />
+    <Content Include="Skins\origami\images\bg_liveSearchRight.png" />
+    <Content Include="Skins\origami\images\bg_resultsReturned.png" />
+    <Content Include="Skins\origami\images\bg_resultsReturnedUL.png" />
+    <Content Include="Skins\origami\images\bg_searchInputNoValue.png" />
+    <Content Include="Skins\origami\images\bg_searchResults.png" />
+    <Content Include="Skins\origami\images\btn_continueReading.png" />
+    <Content Include="Skins\origami\images\btn_download.png" />
+    <Content Include="Skins\origami\images\btn_editComment.png" />
+    <Content Include="Skins\origami\images\btn_editPost.png" />
+    <Content Include="Skins\origami\images\btn_editTrackback.png" />
+    <Content Include="Skins\origami\images\btn_fixed.png" />
+    <Content Include="Skins\origami\images\btn_fixed_a.png" />
+    <Content Include="Skins\origami\images\btn_fixed_a_h.png" />
+    <Content Include="Skins\origami\images\btn_fixed_h.png" />
+    <Content Include="Skins\origami\images\btn_fluid.png" />
+    <Content Include="Skins\origami\images\btn_fluid_a.png" />
+    <Content Include="Skins\origami\images\btn_fluid_a_h.png" />
+    <Content Include="Skins\origami\images\btn_fluid_h.png" />
+    <Content Include="Skins\origami\images\btn_help.png" />
+    <Content Include="Skins\origami\images\btn_jello.png" />
+    <Content Include="Skins\origami\images\btn_jello_a.png" />
+    <Content Include="Skins\origami\images\btn_jello_a_h.png" />
+    <Content Include="Skins\origami\images\btn_jello_h.png" />
+    <Content Include="Skins\origami\images\btn_largeText.png" />
+    <Content Include="Skins\origami\images\btn_largeText_a.png" />
+    <Content Include="Skins\origami\images\btn_largeText_a_h.png" />
+    <Content Include="Skins\origami\images\btn_largeText_h.png" />
+    <Content Include="Skins\origami\images\btn_leftSideBar.png" />
+    <Content Include="Skins\origami\images\btn_leftSideBar_a.png" />
+    <Content Include="Skins\origami\images\btn_leftSideBar_a_h.png" />
+    <Content Include="Skins\origami\images\btn_leftSideBar_h.png" />
+    <Content Include="Skins\origami\images\btn_mediumText.png" />
+    <Content Include="Skins\origami\images\btn_mediumText_a.png" />
+    <Content Include="Skins\origami\images\btn_mediumText_a_h.png" />
+    <Content Include="Skins\origami\images\btn_mediumText_h.png" />
+    <Content Include="Skins\origami\images\btn_nukeComment.png" />
+    <Content Include="Skins\origami\images\btn_nukeTrackback.png" />
+    <Content Include="Skins\origami\images\btn_publishComment.png" />
+    <Content Include="Skins\origami\images\btn_publishComment_h.png" />
+    <Content Include="Skins\origami\images\btn_rightSideBar.png" />
+    <Content Include="Skins\origami\images\btn_RSSXMLFeed.png" />
+    <Content Include="Skins\origami\images\btn_searchClose.png" />
+    <Content Include="Skins\origami\images\btn_sifrOff.png" />
+    <Content Include="Skins\origami\images\btn_sifrOn.png" />
+    <Content Include="Skins\origami\images\btn_top.png" />
+    <Content Include="Skins\origami\images\btn_trackbackURI.png" />
+    <Content Include="Skins\origami\images\btn_typoPowered.png" />
+    <Content Include="Skins\origami\images\btn_validateCSS.png" />
+    <Content Include="Skins\origami\images\btn_validateXHTML.png" />
+    <Content Include="Skins\origami\images\btn_xLargeText.png" />
+    <Content Include="Skins\origami\images\bullet_important.png" />
+    <Content Include="Skins\origami\images\bullet_sideBar.png" />
+    <Content Include="Skins\origami\images\bullet_sideBar_h.png" />
+    <Content Include="Skins\origami\images\bullet_sideBar_v.png" />
+    <Content Include="Skins\origami\images\bullet_UL.png" />
+    <Content Include="Skins\origami\images\bg_commentAuthorGradient.gif" />
+    <Content Include="Skins\origami\images\div_head.png" />
+    <Content Include="Skins\origami\images\header_Personalize.png" />
+    <Content Include="Skins\origami\images\icon_download.gif" />
+    <Content Include="Skins\origami\images\icon_enlarge.png" />
+    <Content Include="Skins\origami\images\icon_externalSite.png" />
+    <Content Include="Skins\origami\images\icon_externalSite_alt.png" />
+    <Content Include="Skins\origami\images\icon_favicon.ico" />
+    <Content Include="Skins\origami\images\icon_fixed.png" />
+    <Content Include="Skins\origami\images\icon_fluid.png" />
+    <Content Include="Skins\origami\images\icon_jello.png" />
+    <Content Include="Skins\origami\images\icon_largeText.png" />
+    <Content Include="Skins\origami\images\icon_leftSideBar.png" />
+    <Content Include="Skins\origami\images\icon_mediumText.png" />
+    <Content Include="Skins\origami\images\icon_post.png" />
+    <Content Include="Skins\origami\images\icon_rightSideBar.png" />
+    <Content Include="Skins\origami\images\icon_sifrOff.png" />
+    <Content Include="Skins\origami\images\icon_sifrOn.png" />
+    <Content Include="Skins\origami\images\icon_xLargeText.png" />
+    <Content Include="Skins\origami\images\search-throbber.gif" />
+    <Content Include="Skins\origami\images\sglogo.gif" />
+    <Content Include="Skins\origami\images\tradegothic.swf" />
+    <Content Include="Skins\origami\PageTemplate.ascx" />
+    <Content Include="Skins\origami\README.txt" />
+    <Content Include="Skins\origami\Scripts\behaviour.js" />
+    <Content Include="Skins\origami\Scripts\cookies.js" />
+    <Content Include="Skins\origami\Scripts\coreFunctions.js" />
+    <Content Include="Skins\origami\Scripts\effects.js" />
+    <Content Include="Skins\origami\Scripts\init.js" />
+    <Content Include="Skins\origami\Scripts\searchResults.js" />
+    <Content Include="Skins\origami\Scripts\styleSwitcher.js" />
+    <Content Include="Skins\origami\Scripts\typo.js" />
+    <Content Include="Skins\origami\style.css" />
+    <Content Include="Skins\origami\alternateStyles.css" />
+    <Content Include="Skins\origami\core-IE.css" />
+    <Content Include="Skins\origami\core.css" />
+    <Content Include="Skins\origami\ie5_5.css" />
+    <Content Include="Skins\origami\print.css" />
+    <Content Include="Skins\origami\sIFR-print.css" />
+    <Content Include="Skins\origami\sIFR-screen.css" />
+    <Content Include="Skins\origami\tables.css" />
+    <Content Include="Skins\origami\user-styles.css" />
+    <Content Include="Skins\Piyo\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Piyo\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Piyo\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Piyo\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Piyo\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Piyo\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Piyo\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Piyo\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Piyo\Controls\Comments.ascx" />
+    <Content Include="Skins\Piyo\Controls\Contact.ascx" />
+    <Content Include="Skins\Piyo\Controls\Day.ascx" />
+    <Content Include="Skins\Piyo\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Piyo\Controls\EntryList.ascx" />
+    <Content Include="Skins\Piyo\Controls\Footer.ascx" />
+    <Content Include="Skins\Piyo\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Piyo\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Piyo\Controls\Header.ascx" />
+    <Content Include="Skins\Piyo\Controls\HomePage.ascx" />
+    <Content Include="Skins\Piyo\Controls\Login.ascx" />
+    <Content Include="Skins\Piyo\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Piyo\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Piyo\Controls\News.ascx" />
+    <Content Include="Skins\Piyo\Controls\PostComment.ascx" />
+    <Content Include="Skins\Piyo\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Piyo\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\Piyo\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Piyo\Controls\SubTextBlogCalendar.ascx" />
+    <Content Include="Skins\Piyo\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Piyo\Controls\Syndacations.ascx" />
+    <Content Include="Skins\Piyo\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Piyo\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Piyo\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Piyo\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Piyo\Images\asual-bg.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-blockquote.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-bodycenter.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-bodyleft.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-bodyright.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-comments.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-commentslink.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-content.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-disc.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-footcenter.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-footleft.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-footright.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-headcenter.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-headleft.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-headright.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-search.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-trackbacks.jpg" />
+    <Content Include="Skins\Piyo\Images\asual-trackbackslink.jpg" />
+    <Content Include="Skins\Piyo\PageTemplate.ascx" />
+    <Content Include="Skins\Piyo\piyo-elastic.css" />
+    <Content Include="Skins\Piyo\piyo-fixed.css" />
+    <Content Include="Skins\Piyo\print.css" />
+    <Content Include="Skins\Piyo\README.txt" />
+    <Content Include="Skins\Piyo\Scripts\piyo.js" />
+    <Content Include="Skins\Piyo\style.css" />
+    <Content Include="Skins\RedBook\Blue.css" />
+    <Content Include="Skins\RedBook\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\RedBook\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\RedBook\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\RedBook\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\RedBook\Controls\BlogStats.ascx" />
+    <Content Include="Skins\RedBook\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\RedBook\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\RedBook\Controls\CategoryList.ascx" />
+    <Content Include="Skins\RedBook\Controls\Comments.ascx" />
+    <Content Include="Skins\RedBook\Controls\Contact.ascx" />
+    <Content Include="Skins\RedBook\Controls\Day.ascx" />
+    <Content Include="Skins\RedBook\Controls\DayCollection.ascx" />
+    <Content Include="HostAdmin\HostAdminTemplate.Master" />
+    <Content Include="Log4Net.config" />
+    <Content Include="Install\InstallTemplate.Master" />
+    <Content Include="Images\IdenticonHandler.ashx" />
+    <Content Include="Admin\Posts\Posts.Master" />
+    <Content Include="Admin\Articles\Articles.Master" />
+    <Content Include="Admin\Feedback\Feedback.Master" />
+    <None Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
+    <None Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
+    <None Include="Providers\BlogEntryEditor\FCKeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
+    <Content Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\connectors\aspx\Web.config" />
+    <None Include="Providers\BlogEntryEditor\FCKeditor\editor\filemanager\browser\default\images\icons\32\Thumbs.db" />
+    <Content Include="SiteMap\SiteMapHttpHandler.ashx" />
+    <Content Include="Providers\Web.config" />
+    <Content Include="Admin\Services\Ajax\AjaxServices.ashx" />
+    <None Include="Skins\RedBook\Controls\EntryList.ascx" />
+    <Content Include="Skins\RedBook\Controls\Footer.ascx" />
+    <Content Include="Skins\Naked\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\RedBook\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\RedBook\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\RedBook\Controls\Header.ascx" />
+    <Content Include="Skins\RedBook\Controls\HomePage.ascx" />
+    <Content Include="Skins\RedBook\Controls\Login.ascx" />
+    <Content Include="Skins\RedBook\Controls\MonthListings.ascx" />
+    <Content Include="Skins\RedBook\Controls\MyLinks.ascx" />
+    <Content Include="Skins\RedBook\Controls\News.ascx" />
+    <Content Include="Skins\RedBook\Controls\PostComment.ascx" />
+    <Content Include="Skins\RedBook\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\RedBook\Controls\RecentComments.ascx" />
+    <Content Include="Skins\RedBook\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\RedBook\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\RedBook\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\RedBook\Controls\Syndications.ascx" />
+    <Content Include="Skins\RedBook\Controls\TagCloud.ascx" />
+    <Content Include="Skins\RedBook\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\RedBook\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\RedBook\Controls\ViewPost.ascx" />
+    <Content Include="Skins\RedBook\Green.css" />
+    <Content Include="Skins\RedBook\IE6Patches.css" />
+    <Content Include="Skins\RedBook\IE7Patches.css" />
+    <Content Include="Skins\RedBook\Images\Blue\back.jpg" />
+    <Content Include="Skins\RedBook\Images\Blue\backback.jpg" />
+    <Content Include="Skins\RedBook\Images\Blue\rondo.jpg" />
+    <Content Include="Skins\RedBook\Images\Blue\rondobottom.jpg" />
+    <Content Include="Skins\RedBook\Images\button.gif" />
+    <Content Include="Skins\RedBook\Images\checkbox.gif" />
+    <Content Include="Skins\RedBook\Images\CommentAuthorGradient.gif" />
+    <Content Include="Skins\RedBook\Images\Green\back.jpg" />
+    <Content Include="Skins\RedBook\Images\Green\backback.jpg" />
+    <Content Include="Skins\RedBook\Images\Green\rondo.jpg" />
+    <Content Include="Skins\RedBook\Images\Green\rondobottom.jpg" />
+    <Content Include="Skins\RedBook\Images\header.jpg" />
+    <Content Include="Skins\RedBook\Images\input.gif" />
+    <Content Include="Skins\RedBook\Images\list-arrow.gif" />
+    <Content Include="Skins\RedBook\Images\mitem.gif" />
+    <Content Include="Skins\RedBook\Images\radio.gif" />
+    <Content Include="Skins\RedBook\Images\Red\back.jpg" />
+    <Content Include="Skins\RedBook\Images\Red\backback.png" />
+    <Content Include="Skins\RedBook\Images\Red\rondo.jpg" />
+    <Content Include="Skins\RedBook\Images\Red\rondobottom.jpg" />
+    <Content Include="Skins\RedBook\Images\select_bg.gif" />
+    <Content Include="Skins\RedBook\Images\select_left.gif" />
+    <Content Include="Skins\RedBook\Images\select_right.gif" />
+    <Content Include="Skins\RedBook\Images\textarea.gif" />
+    <Content Include="Skins\RedBook\Images\uitu.jpg" />
+    <Content Include="Skins\RedBook\Images\underlink.jpg" />
+    <Content Include="Skins\RedBook\niceforms-default.css" />
+    <Content Include="Skins\RedBook\PageTemplate.ascx" />
+    <Content Include="Skins\RedBook\print.css" />
+    <Content Include="Skins\RedBook\Red.css" />
+    <Content Include="Skins\RedBook\Style.css" />
+    <Content Include="Skins\Semagogy\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Semagogy\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Semagogy\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Semagogy\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Semagogy\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Semagogy\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Semagogy\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Semagogy\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Semagogy\Controls\Comments.ascx" />
+    <Content Include="Skins\Semagogy\Controls\Contact.ascx" />
+    <Content Include="Skins\Semagogy\Controls\Day.ascx" />
+    <Content Include="Skins\Semagogy\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Semagogy\Controls\EntryList.ascx" />
+    <Content Include="Skins\Semagogy\Controls\Footer.ascx" />
+    <Content Include="Skins\Semagogy\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Semagogy\Controls\Header.ascx" />
+    <Content Include="Skins\Semagogy\Controls\HomePage.ascx" />
+    <Content Include="Skins\Semagogy\Controls\Login.ascx" />
+    <Content Include="Skins\Semagogy\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Semagogy\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Semagogy\Controls\News.ascx" />
+    <Content Include="Skins\Semagogy\Controls\PostComment.ascx" />
+    <Content Include="Skins\Semagogy\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Semagogy\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Semagogy\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Semagogy\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Semagogy\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Semagogy\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Semagogy\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Semagogy\Images\ClusterArchive.gif" />
+    <Content Include="Skins\Semagogy\Images\ClusterArticles.gif" />
+    <Content Include="Skins\Semagogy\Images\ClusterBackground.gif" />
+    <Content Include="Skins\Semagogy\Images\ClusterBlogRoll.gif" />
+    <Content Include="Skins\Semagogy\Images\ClusterBullet.gif" />
+    <Content Include="Skins\Semagogy\Images\ClusterCategories.gif" />
+    <Content Include="Skins\Semagogy\Images\ClusterStatistics.gif" />
+    <Content Include="Skins\Semagogy\Images\CommentPermaLink.gif" />
+    <Content Include="Skins\Semagogy\Images\CommentSeparatorTile.gif" />
+    <Content Include="Skins\Semagogy\Images\HeaderBackground.gif" />
+    <Content Include="Skins\Semagogy\Images\NavigationAdmin.gif" />
+    <Content Include="Skins\Semagogy\Images\NavigationBackground.gif" />
+    <Content Include="Skins\Semagogy\Images\NavigationContact.gif" />
+    <Content Include="Skins\Semagogy\Images\NavigationHome.gif" />
+    <Content Include="Skins\Semagogy\Images\NavigationLogin.gif" />
+    <Content Include="Skins\Semagogy\Images\NavigationSyndication.gif" />
+    <Content Include="Skins\Semagogy\Images\PostBottomBackground.gif" />
+    <Content Include="Skins\Semagogy\PageTemplate.ascx" />
+    <Content Include="Skins\Semagogy\print.css" />
+    <Content Include="Skins\Semagogy\Scripts\DarkHorseLayoutEngine.js" />
+    <Content Include="Skins\Semagogy\style.css" />
+    <Content Include="Skins\Submarine\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\Submarine\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\Submarine\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\Submarine\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\Submarine\Controls\BlogStats.ascx" />
+    <Content Include="Skins\Submarine\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\Submarine\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\Submarine\Controls\CategoryList.ascx" />
+    <Content Include="Skins\Submarine\Controls\Comments.ascx" />
+    <Content Include="Skins\Submarine\Controls\Contact.ascx" />
+    <Content Include="Skins\Submarine\Controls\Day.ascx" />
+    <Content Include="Skins\Submarine\Controls\DayCollection.ascx" />
+    <Content Include="Skins\Submarine\Controls\EntryList.ascx" />
+    <Content Include="Skins\Submarine\Controls\Footer.ascx" />
+    <Content Include="Skins\Submarine\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\Submarine\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\Submarine\Controls\Header.ascx" />
+    <Content Include="Skins\Submarine\Controls\HomePage.ascx" />
+    <Content Include="Skins\Submarine\Controls\Login.ascx" />
+    <Content Include="Skins\Submarine\Controls\MonthListings.ascx" />
+    <Content Include="Skins\Submarine\Controls\MyLinks.ascx" />
+    <Content Include="Skins\Submarine\Controls\mylinksAdmin.ascx" />
+    <Content Include="Skins\Submarine\Controls\News.ascx" />
+    <Content Include="Skins\Submarine\Controls\PostComment.ascx" />
+    <Content Include="Skins\Submarine\Controls\powered.ascx" />
+    <Content Include="Skins\Submarine\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\Submarine\Controls\RecentComments.ascx" />
+    <Content Include="Skins\Submarine\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\Submarine\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\Submarine\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\Submarine\Controls\TagCloud.ascx" />
+    <Content Include="Skins\Submarine\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\Submarine\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\Submarine\Controls\ViewPost.ascx" />
+    <Content Include="Skins\Submarine\images\bcg.jpg" />
+    <Content Include="Skins\Submarine\images\btnAdmin.gif" />
+    <Content Include="Skins\Submarine\images\buton.gif" />
+    <Content Include="Skins\Submarine\images\content.jpg" />
+    <Content Include="Skins\Submarine\images\feedback.gif" />
+    <Content Include="Skins\Submarine\images\footer.gif" />
+    <Content Include="Skins\Submarine\images\home.gif" />
+    <Content Include="Skins\Submarine\images\poweredby.gif" />
+    <Content Include="Skins\Submarine\PageTemplate.ascx" />
+    <Content Include="Skins\Submarine\print.css" />
+    <Content Include="Skins\Submarine\style.css" />
+    <Content Include="Skins\WPSkin\Controls\ArchiveCategory.ascx" />
+    <Content Include="Skins\WPSkin\Controls\ArchiveDay.ascx" />
+    <Content Include="Skins\WPSkin\Controls\ArchiveLinks.ascx" />
+    <Content Include="Skins\WPSkin\Controls\ArchiveMonth.ascx" />
+    <Content Include="Skins\WPSkin\Controls\BlogStats.ascx" />
+    <Content Include="Skins\WPSkin\Controls\CategoryDisplay.ascx" />
+    <Content Include="Skins\WPSkin\Controls\CategoryEntryList.ascx" />
+    <Content Include="Skins\WPSkin\Controls\CategoryList.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Comments.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Contact.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Day.ascx" />
+    <Content Include="Skins\WPSkin\Controls\DayCollection.ascx" />
+    <Content Include="Skins\WPSkin\Controls\EntryList.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Footer.ascx" />
+    <Content Include="Skins\WPSkin\Controls\FullTagCloud.ascx" />
+    <Content Include="Skins\WPSkin\Controls\GalleryThumbNailViewer.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Header.ascx" />
+    <Content Include="Skins\WPSkin\Controls\HomePage.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Login.ascx" />
+    <Content Include="Skins\WPSkin\Controls\MonthListings.ascx" />
+    <Content Include="Skins\WPSkin\Controls\MyLinks.ascx" />
+    <Content Include="Skins\WPSkin\Controls\News.ascx" />
+    <Content Include="Skins\WPSkin\Controls\PostComment.ascx" />
+    <Content Include="Skins\WPSkin\Controls\PreviousNext.ascx" />
+    <Content Include="Skins\WPSkin\Controls\RelatedLinks.ascx" />
+    <Content Include="Skins\WPSkin\Controls\SingleColumn.ascx" />
+    <Content Include="Skins\WPSkin\Controls\SubtextSearch.ascx" />
+    <Content Include="Skins\WPSkin\Controls\TagCloud.ascx" />
+    <Content Include="Skins\WPSkin\Controls\TagEntryList.ascx" />
+    <Content Include="Skins\WPSkin\Controls\Top10Module.ascx" />
+    <Content Include="Skins\WPSkin\Controls\ViewPicture.ascx" />
+    <Content Include="Skins\WPSkin\Controls\ViewPost.ascx" />
+    <Content Include="Skins\WPSkin\IEPatches.css" />
+    <Content Include="Skins\WPSkin\images\audio.jpg" />
+    <Content Include="Skins\WPSkin\images\kubrickbg.jpg" />
+    <Content Include="Skins\WPSkin\images\kubrickbgcolor.jpg" />
+    <Content Include="Skins\WPSkin\images\kubrickbgwide.jpg" />
+    <Content Include="Skins\WPSkin\images\kubrickfooter.jpg" />
+    <Content Include="Skins\WPSkin\images\kubrickheader.jpg" />
+    <Content Include="Skins\WPSkin\PageTemplate.ascx" />
+    <Content Include="Skins\WPSkin\print.css" />
+    <Content Include="Skins\WPSkin\style.css" />
+    <Content Include="Skins\_System\commonlayout.css" />
+    <Content Include="Skins\_System\commonstyle.css" />
+    <Content Include="Skins\_System\csharp.css" />
+    <Content Include="Skins\_System\forgotpassword.css" />
+    <Content Include="Skins\_System\forms.css" />
+    <Content Include="Skins\_System\login.css" />
+    <Content Include="Skins\_System\SystemStyle.css" />
+    <Content Include="SystemMessages\BlogNotActive.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="SystemMessages\CheckYourConnectionString.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="SystemMessages\DatabaseLoginFailed.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="SystemMessages\Error.aspx" />
+    <Content Include="SystemMessages\FileNotFound.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="SystemMessages\Style\SystemMessageStyle.css" />
+    <Content Include="SystemMessages\UpgradeInProgress.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="UI\WebControls\ContentRegion.bmp" />
+    <Content Include="UI\WebControls\MasterPage.bmp" />
+    <Content Include="Admin\WebUI\AdminPageTemplate.Master" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Skins\_System\ForgotPassword.Master" />
+    <Content Include="SystemMessages\SystemMessageTemplate.Master" />
+    <Content Include="wlwmanifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Subtext.BlogMl\Subtext.BlogML.csproj">
+      <Project>{830310DB-5D6A-453C-908A-058776D9C993}</Project>
+      <Name>Subtext.BlogML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Extensibility\Subtext.Extensibility.csproj">
+      <Project>{13018F20-F796-4FFE-9290-83D0E661C0A1}</Project>
+      <Name>Subtext.Extensibility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Framework\Subtext.Framework.csproj">
+      <Project>{AFE766FE-5FC7-4B64-AE50-E54E9AFD77F0}</Project>
+      <Name>Subtext.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Installation\Subtext.Installation.csproj">
+      <Project>{745B39B7-DE46-4070-8733-C53308721C58}</Project>
+      <Name>Subtext.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Providers.BlogEntryEditor.FCKeditor\Subtext.Providers.BlogEntryEditor.FCKeditor.csproj">
+      <Project>{C219C5FF-D4EC-4838-BACF-E3C2C6E69514}</Project>
+      <Name>Subtext.Providers.BlogEntryEditor.FCKeditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Scripting\Subtext.Scripting.csproj">
+      <Project>{009EBDBA-A3B4-4F01-8BF4-A8947F7C0F7F}</Project>
+      <Name>Subtext.Scripting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Web.Controls\Subtext.Web.Controls.csproj">
+      <Project>{2278427B-8BAD-4CE9-B15A-FD1131753D64}</Project>
+      <Name>Subtext.Web.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Skins\Mobile\Images\" />
+    <Folder Include="Skins\Mobile\Scripts\" />
+    <Folder Include="Skins\Naked\Images\" />
+    <Folder Include="Skins\Naked\Scripts\" />
+    <Folder Include="Skins\origami\Styles\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(Solutions.VSVersion)' == '8.0'" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(Solutions.VSVersion)' == '9.0'" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2732</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2732/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

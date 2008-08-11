@@ -1,0 +1,625 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFE766FE-5FC7-4B64-AE50-E54E9AFD77F0}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Subtext.Framework</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Subtext.Framework</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Documentation|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DOCUMENTATION</DefineConstants>
+    <DocumentationFile>bin\debug\Subtext.Framework.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BlogML, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="blowery.Web.HttpCompress, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="CookComputing.XmlRpcV2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DotNetOpenMail">
+      <Name>DotNetOpenMail</Name>
+      <HintPath>ExternalDependencies\DotNetOpenMail.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=227c66cf5503649a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.2379.25601, Culture=neutral" />
+    <Reference Include="SgmlReaderDll, Version=1.7.2383.20436, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="Velocit.RegularExpressions">
+      <Name>Velocit.RegularExpressions</Name>
+      <HintPath>ExternalDependencies\Velocit.RegularExpressions.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\Subtext.Akismet\Subtext.Akismet.csproj">
+      <Project>{4B791A18-F723-4B4F-84D3-F9CCB4B250AB}</Project>
+      <Name>Subtext.Akismet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.BlogMl\Subtext.BlogML.csproj">
+      <Project>{830310DB-5D6A-453C-908A-058776D9C993}</Project>
+      <Name>Subtext.BlogML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Extensibility\Subtext.Extensibility.csproj">
+      <Name>Subtext.Extensibility</Name>
+      <Project>{13018F20-F796-4FFE-9290-83D0E661C0A1}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Subtext.Scripting\Subtext.Scripting.csproj">
+      <Name>Subtext.Scripting</Name>
+      <Project>{009EBDBA-A3B4-4F01-8BF4-A8947F7C0F7F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\VersionInfo.Designer.cs">
+      <Link>VersionInfo.Designer.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Archives.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlogInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommentFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ArchiveCount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\CategoryType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\BlogGroup.cs" />
+    <Compile Include="Components\Enclosure.cs" />
+    <Compile Include="Components\Entry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\EntryDay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\EntryStatsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\EntryView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\FeedbackItem.cs" />
+    <Compile Include="Components\Image.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ImageCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\KeyWord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Link.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\LinkCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\MetaTag.cs" />
+    <Compile Include="Components\PagedCollection.cs" />
+    <Compile Include="Components\PageType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\PageViewType.cs" />
+    <Compile Include="Components\Referrer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Tag.cs" />
+    <Compile Include="Components\Trackback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ViewStat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\BlogConfigurationSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Config.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationFlag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\FriendlyUrlSettings.cs" />
+    <Compile Include="Configuration\MimeTypesMapper.cs" />
+    <Compile Include="Configuration\SkinConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tracking.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\UrlBasedBlogInfoProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContentCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Cacher.cs" />
+    <Compile Include="Data\DatabaseObjectProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SqlDataProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SqlErrorMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Transformer.cs" />
+    <Compile Include="DateTimeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Email\DotNetOpenMailProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Email\SystemMailProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enclosures.cs" />
+    <Compile Include="Entries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BaseBlogConfigurationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BaseCommentException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogApplicationDirectoryCreateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogDoesNotExistException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogDuplicationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogHiddenException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogImportException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogInactiveException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\BlogRequiresSubfolderException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\CommentBlacklistException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\CommentDuplicateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\CommentFrequencyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\CommentSpamException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\DuplicateEntryException.cs" />
+    <Compile Include="Exceptions\HostDataDoesNotExistException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\HostNotConfiguredException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\InvalidSubfolderNameException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Format\UrlFormats.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HostInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Images.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImportExport\ObjectHydrator.cs" />
+    <Compile Include="ImportExport\SubtextBlogMlProvider.cs" />
+    <Compile Include="ImportExport\SubtextConversionStrategy.cs" />
+    <Compile Include="ImportManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstallationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Links.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\DatabaseLoggingProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\IConfigurationDeclaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\IConfigurationFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\LogEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\LoggingProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetaTags.cs" />
+    <Compile Include="NamespaceDocumentation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NullValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\GlobalSuppressions.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\DbProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\ObjectProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\EntrySearchProvider.cs" />
+    <Compile Include="Security\SecurityHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\AkismetSpamService.cs" />
+    <Compile Include="Services\BrowserDetectionService.cs" />
+    <Compile Include="Services\BrowserInfo.cs" />
+    <Compile Include="Services\IFeedbackSpamService.cs" />
+    <Compile Include="Stats.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\Admin\LogRssWriter.cs" />
+    <Compile Include="Syndication\Admin\RssAdminHandler.cs" />
+    <Compile Include="Syndication\Admin\ReferrerRssWriter.cs" />
+    <Compile Include="Syndication\Admin\ModeratedCommentRssWriter.cs" />
+    <Compile Include="Syndication\AtomHandler.cs" />
+    <Compile Include="Syndication\AtomWriter.cs" />
+    <Compile Include="Syndication\BaseAtomWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\BaseRssWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\BaseSyndicationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\BaseSyndicationWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\BaseSyndicationWriterGeneric.cs" />
+    <Compile Include="Syndication\CachedFeed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\CategoryWriter.cs" />
+    <Compile Include="Syndication\CommentHandler.cs" />
+    <Compile Include="Syndication\CommentRssWriter.cs" />
+    <Compile Include="Syndication\Compression\SyndicationCompressionFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\Compression\SyndicationCompressionHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\Compression\SyndicationCompressionSectionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\Compression\SyndicationCompressionSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\GenericRssWriter.cs" />
+    <Compile Include="Syndication\EntryCollectionHandler.cs" />
+    <Compile Include="Syndication\RssCategoryHandler.cs" />
+    <Compile Include="Syndication\RssCommentHandler.cs" />
+    <Compile Include="Syndication\RssHandler.cs" />
+    <Compile Include="Syndication\RssImageElement.cs" />
+    <Compile Include="Syndication\RssTagHandler.cs" />
+    <Compile Include="Syndication\RssWriter.cs" />
+    <Compile Include="Tags.cs" />
+    <Compile Include="Text\HtmlHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Text\StringHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Threading\AsyncHelper.cs" />
+    <Compile Include="Threading\ManagedThreadPool.cs" />
+    <Compile Include="Threading\Semaphore.cs" />
+    <Compile Include="Threading\TimedLock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\AggBugHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\CommunityCreditNotification.cs" />
+    <Compile Include="Tracking\CommunityCreditNotificationException.cs" />
+    <Compile Include="Tracking\EntryTracker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\Notification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\Notifier.cs" />
+    <Compile Include="Tracking\PingBackNotificatinProxy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tracking\PingBackService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\SourceVerificationEventArgs.cs" />
+    <Compile Include="Tracking\TrackBackHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\TrackBackNotificationProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\TrackbackResponseCode.cs" />
+    <Compile Include="Tracking\TrackHelpers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\TrackingUrls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\Verifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracking\WeblogsNotificatinProxy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Skinning\CacheKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Skinning\Script.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Skinning\ScriptElementCollectionRenderer.cs" />
+    <Compile Include="UI\Skinning\SkinTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Skinning\SkinTemplateCollection.cs" />
+    <Compile Include="UI\Skinning\Style.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Skinning\StyleSheetElementCollectionRenderer.cs" />
+    <Compile Include="UrlManager\HandlerConfiguration.cs" />
+    <Compile Include="UrlManager\HttpHandler.cs" />
+    <Compile Include="UrlManager\PageHandlerFactory.cs" />
+    <Compile Include="UrlManager\UrlReWriteHandlerFactory.cs" />
+    <Compile Include="Util\Keywords.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\SerializationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Statistics.cs" />
+    <Compile Include="Util\TimeZones.cs" />
+    <Compile Include="Util\Transform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\WebPathStripper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\XmlSerializerSectionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VersionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web References\com.community-credit.www\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="BlogAlias.cs" />
+    <Compile Include="Web\Handlers\CssHandler.cs" />
+    <Compile Include="Web\Handlers\JsHandler.cs" />
+    <Compile Include="Web\Handlers\RsdHandler.cs" />
+    <Compile Include="Web\HttpHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\HttpModules\AuthenticationModule.cs" />
+    <Compile Include="Web\HttpModules\FormToBasicAuthenticationModule.cs" />
+    <Compile Include="Web\HttpModules\BlogRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\HttpModules\BlogRequestModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\HttpModules\CompressionModule.cs" />
+    <Compile Include="Web\HttpModules\InstallationCheckModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\IWordPressAPI.cs" />
+    <Compile Include="XmlRpc\MetaWeblog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\MetaWeblogAPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="ExternalDependencies\BlogML.dll" />
+    <Content Include="ExternalDependencies\blowery.Web.HttpCompress.dll" />
+    <Content Include="ExternalDependencies\CookComputing.XmlRpcV2.dll" />
+    <Content Include="ExternalDependencies\DotNetOpenMail.dll" />
+    <Content Include="ExternalDependencies\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="ExternalDependencies\log4net.dll" />
+    <Content Include="ExternalDependencies\log4net.xml" />
+    <Content Include="ExternalDependencies\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="ExternalDependencies\Microsoft.ApplicationBlocks.Data.xml" />
+    <Content Include="ExternalDependencies\SgmlReaderDll.dll" />
+    <Content Include="ExternalDependencies\Velocit.RegularExpressions.dll" />
+    <Content Include="license.txt" />
+    <Content Include="Logging\LoggingConfigurationExample.xml" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.community-credit.www\affiliateservices.disco" />
+    <None Include="Web References\com.community-credit.www\affiliateservices.wsdl" />
+    <None Include="Web References\com.community-credit.www\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\WindowsTimeZoneCollection.xml" />
+    <EmbeddedResource Include="Tracking\PingBackNotificatinProxy.resx">
+      <DependentUpon>PingBackNotificatinProxy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tracking\WeblogsNotificatinProxy.resx">
+      <DependentUpon>WeblogsNotificatinProxy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.community-credit.com/services/affiliateservices.asmx%3fop=AddCommunityCredit">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.community-credit.www\</RelPath>
+      <UpdateFromURL>http://www.community-credit.com/services/affiliateservices.asmx%3fop=AddCommunityCredit</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Subtext_Framework_com_community_credit_www_AffiliateServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

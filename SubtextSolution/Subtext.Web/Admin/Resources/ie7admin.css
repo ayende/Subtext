@@ -1,0 +1,31 @@
+﻿#filler {
+    float: right;
+    margin-top: 35px;
+}
+
+#feedback-filter
+{
+	float: right;
+	margin: 4px 10px 0 0;
+}
+
+#feedback-filter select
+{
+    width: 10em;
+}
+
+body.Links fieldset.section input.textbox, 
+body.Links fieldset.section textarea, 
+fieldset.edit-form input.textbox,
+fieldset.edit-form textarea,
+#entry-editor input.textbox,
+fieldset.categories-edit input.textbox,
+fieldset.categories-edit textarea
+{
+    margin-left: -170px;
+}
+
+#header
+{
+    float: none;
+}
