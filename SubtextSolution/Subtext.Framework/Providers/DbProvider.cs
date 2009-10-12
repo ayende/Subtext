@@ -186,6 +186,8 @@ namespace Subtext.Framework.Providers
         /// <param name="includeCategories"></param>
 	    /// <returns></returns>
         public abstract IDataReader GetEntryReader(int id, bool includeCategories);
+
+		public abstract DateTime? GetLatestEntryDate();
         
 	    /// <summary>
         /// Returns a Data Reader pointing to the entry specified by the entry name.

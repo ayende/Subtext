@@ -24,6 +24,7 @@ using Subtext.Extensibility;
 using Subtext.Framework.Components;
 using Subtext.Framework.Configuration;
 using Subtext.Framework.Logging;
+using Subtext.Framework.Providers;
 using Subtext.Framework.Security;
 using Subtext.Framework.Tracking;
 using Subtext.Framework.Util;
@@ -80,7 +81,18 @@ namespace Subtext.Framework.XmlRpc
             }
             else
             {
-                entry.DateCreated = Config.CurrentBlog.TimeZone.Now;
+            	var lastEntryDate = DbProvider.Instance().GetLatestEntryDate();
+				
+				//no date, or something in the past
+				if(lastEntryDate == null || lastEntryDate < Config.CurrentBlog.TimeZone.Now)
+				{
+					entry.DateCreated = Config.CurrentBlog.TimeZone.Now;
+				}
+				else
+				{
+					// noon the next day
+					entry.DateCreated = lastEntryDate.Value.Date.AddDays(1).AddHours(12);
+				}
                 entry.DateModified = entry.DateCreated;
             }
 

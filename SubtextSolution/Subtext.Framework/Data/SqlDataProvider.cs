@@ -587,6 +587,16 @@ namespace Subtext.Framework.Data
             return GetReader("subtext_GetSingleEntry", p);
         }
 
+		public override DateTime? GetLatestEntryDate()
+		{
+			using(var reader = SqlHelper.ExecuteReader(ConnectionString, CommandType.Text, "SELECT MAX(DateSyndicated) FROM subtext_Content"))
+			{
+				if (reader.Read() == false)
+					return null;
+				return reader.GetDateTime(0);
+			}
+		}
+
 		/// <summary>
 		/// Searches the data store for the first comment with a 
 		/// matching checksum hash.
