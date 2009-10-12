@@ -46,6 +46,7 @@ namespace Subtext.Framework.Email
                 MailAddress to = new MailAddress(toStr);
 
                 MailMessage em = new MailMessage(from, to);
+				em.ReplyTo = from;
 				em.BodyEncoding = Encoding.UTF8;
 				em.Subject = subject;
 				em.Body = message;
