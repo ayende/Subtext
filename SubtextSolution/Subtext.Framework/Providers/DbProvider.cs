@@ -562,5 +562,7 @@ namespace Subtext.Framework.Providers
 		#endregion
 
 		public abstract IDataReader GetBlogAliasById(int aliasId);
+
+	    public abstract void PushOtherPostsDatesAfter(DateTime dateTimeInPost);
 	}
 }

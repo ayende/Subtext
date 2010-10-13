@@ -587,7 +587,14 @@ namespace Subtext.Framework.Data
             return GetReader("subtext_GetSingleEntry", p);
         }
 
-		public override DateTime? GetLatestEntryDate()
+	    public override void PushOtherPostsDatesAfter(DateTime dateTimeInPost)
+	    {
+	        SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.Text,
+	                                  "UPDATE subtext_Content SET DateSyndicated = DateSyndicated+1 WHERE DateSyndicated > @cutoff",
+	                                  new SqlParameter("cutoff", dateTimeInPost));
+	    }
+
+	    public override DateTime? GetLatestEntryDate()
 		{
 			using(var reader = SqlHelper.ExecuteReader(ConnectionString, CommandType.Text, "SELECT MAX(DateSyndicated) FROM subtext_Content"))
 			{

@@ -72,23 +72,31 @@ namespace Subtext.Framework.XmlRpc
             //		Probably means the poster forgot to set the date.
 
             DateTime dateTimeInPost = Config.CurrentBlog.TimeZone.ToLocalTime(post.dateCreated);
+            var lastEntryDate = DbProvider.Instance().GetLatestEntryDate();
 
 
             if (dateTimeInPost.Year >= 2003)
             {
+                // this is an indication that we want to move the rest of the posts 
+                if (dateTimeInPost.AddHours(-1) <= Config.CurrentBlog.TimeZone.Now)
+                {
+                    DbProvider.Instance().PushOtherPostsDatesAfter(dateTimeInPost);
+                }
                 entry.DateCreated = dateTimeInPost;
-                entry.DateModified = dateTimeInPost;
+                entry.DateModified = dateTimeInPost;   
             }
             else
             {
-            	var lastEntryDate = DbProvider.Instance().GetLatestEntryDate();
-				
-				//no date, or something in the past
-				if(lastEntryDate == null || lastEntryDate < Config.CurrentBlog.TimeZone.Now)
+            	
+                if (lastEntryDate == null) // there is no next entry date
 				{
-					entry.DateCreated = Config.CurrentBlog.TimeZone.Now;
+                    entry.DateCreated = Config.CurrentBlog.TimeZone.Now;
 				}
-				else
+                else if (lastEntryDate.Value.AddDays(1) < Config.CurrentBlog.TimeZone.Now) // the latest date it too far in the past
+                {
+                    entry.DateCreated = Config.CurrentBlog.TimeZone.Now;
+                }
+				else 
 				{
 					// noon the next day
 					entry.DateCreated = lastEntryDate.Value.Date.AddDays(1).AddHours(12);
