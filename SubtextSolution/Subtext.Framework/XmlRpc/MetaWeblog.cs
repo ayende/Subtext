@@ -100,6 +100,8 @@ namespace Subtext.Framework.XmlRpc
 				{
 					// noon the next day
 					entry.DateCreated = lastEntryDate.Value.Date.AddDays(1).AddHours(12);
+				    entry.Body = "<blockquote>Originally posted at " + Config.CurrentBlog.TimeZone.Now.ToShortDateString() +
+				        "</blockquote>" + entry.Body;
 				}
                 entry.DateModified = entry.DateCreated;
             }
